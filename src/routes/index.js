@@ -1,10 +1,10 @@
 const { Router } = require("express");
 const router = Router();
 
-const searchGames = require('./searchByName.routes.js');
+const gameSearchApi = require('./gameSearchApi.routes.js');
 const getDetails = require('./getDetails.routes')
 const getAllGames = require('./getAllGames.routes.js')
-const userSearch = require('./userSearch.routes.js')
+const gameSearchDB = require('./gameSearchDB.routes.js')
 const filterByGenre = require('./filterByGenre.routes.js')
 const platformFilter = require("./filterByPlatform.routes.js")
 const filterByRegion = require("./filterByRegion.routes.js")
@@ -19,14 +19,14 @@ const editPost = require('./editPost.routes')
 //All games
 router.use('/allGames', getAllGames)
 
-//Search games: 1-DB ; 2-API **ADMIN**
-router.use('/searchByName', searchGames)
+//Search games API **ADMIN**
+router.use('/gameSearchApi', gameSearchApi)
  
 // Edit posts **ADMIN**
 router.use('/edit', editPost)
 
 //Search games DB **USER**
-router.use('/userSearch', userSearch)
+router.use('/gameSearchDB', gameSearchDB)
 
 //Get game details
 router.use('/details', getDetails)
