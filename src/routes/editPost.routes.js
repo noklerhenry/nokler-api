@@ -9,7 +9,7 @@ const {
 
 router.put('/:id', editPost)
 
-// router.delete('/:id', deletePost)
+router.delete('/:id', deletePost)
 
 
 module.exports = router;
