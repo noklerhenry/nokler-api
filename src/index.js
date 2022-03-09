@@ -20,8 +20,5 @@ app.use("/", routes);
 
 
 const server = app.listen(PORT, () =>{
-  genreDB()
-  platformsDB()
-  storesDB()
   console.log(`🚀 Server ready at: http://localhost:${PORT}`)
 });
