@@ -13,6 +13,7 @@ const filterAcum = require("./filtersAcum.routes.js")
 const filterByStore = require('./filterByStore.routes.js')
 const checkOut = require('./checkOut.routes.js')
 const editPost = require('./editPost.routes')
+const deletePost = require('./deletePost.routes')
 
 //Import de routers:
 
@@ -24,6 +25,9 @@ router.use('/gameSearchApi', gameSearchApi)
  
 // Edit posts **ADMIN**
 router.use('/edit', editPost)
+
+// Delete posts **ADMIN**
+router.use('/delete', deletePost)
 
 //Search games DB **USER**
 router.use('/gameSearchDB', gameSearchDB)

@@ -2,11 +2,11 @@ const express = require('express')
 const router = express.Router();
 
 const {
-    editPost
-} = require('../controllers/editPost.controller')
+    deletePost
+} = require('../controllers/deletePost.controller')
 
 
-router.put('/:id', editPost)
+router.delete('/:id', deletePost)
 
 
 module.exports = router;

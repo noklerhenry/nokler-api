@@ -22,26 +22,7 @@ const editPost = async (req, res) => {
     }
 }
 
-const deletePost = async (req, res) => {
-    try {
-        const { id } = req.params
-        console.log(productId)
-    
-        const deletePost = await prisma.game.delete({
-            where: {
-                id: id
-            },
-        })
-        console.log('Product deleted!')
-        res.status(200).json(deletePost)
-    
-    } catch (error) {
-        console.log(error)
-    }
-}
-
 
 module.exports = {
-    editPost,
-    deletePost
+    editPost
 };
