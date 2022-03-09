@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Game {
-  id          String        @id @default(uuid())
+  id          String        @id @default(dbgenerated("gen_random_uuid()"))
   name        String        @unique @db.VarChar(100)
   released_at DateTime?
   rating      Float?
@@ -89,7 +89,7 @@ model User {
   password    String        @db.VarChar(50)
   rol         Rol           @default(USER)
   state       State         @default(STANDARD)
-  img         String
+  img         String?
   userProduct ProductsKey[]
   order       Order[]
   enable      Boolean       @default(true)

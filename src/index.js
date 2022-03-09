@@ -1,7 +1,6 @@
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
 const routes = require("./routes");
-
 const {
   genreDB,
   platformsDB,
@@ -22,7 +21,7 @@ app.use("/", routes);
 
 const server = app.listen(PORT, () =>{
   genreDB()
-  platformsDB() 
+  platformsDB()
   storesDB()
   console.log(`🚀 Server ready at: http://localhost:${PORT}`)
 });
