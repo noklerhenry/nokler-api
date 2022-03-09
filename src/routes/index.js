@@ -12,6 +12,7 @@ const createProduct = require('./products.routes.js')
 const filterAcum = require("./filtersAcum.routes.js")
 const filterByStore = require('./filterByStore.routes.js')
 const checkOut = require('./checkOut.routes.js')
+const editPost = require('./editPost.routes')
 
 //Import de routers:
 
@@ -20,6 +21,9 @@ router.use('/allGames', getAllGames)
 
 //Search games: 1-DB ; 2-API **ADMIN**
 router.use('/searchByName', searchGames)
+ 
+// Edit posts **ADMIN**
+router.use('/edit', editPost)
 
 //Search games DB **USER**
 router.use('/userSearch', userSearch)
