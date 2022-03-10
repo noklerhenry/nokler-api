@@ -1,21 +1,17 @@
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
+const {
+  checkOutService
+} = require('../services/checkOut.service')
 
-const checkOut= async (req, res) => {
+
+const checkOut = async (req, res) => {
 
     const { amount, id } = req.body;
   
     try {
-      const payment = await stripe.paymentIntents.create({
-        amount,
-        currency: "USD",
-        payment_method: id,
-        confirm: true,
-      });
-  
-      console.log(payment);
-  
+      const payment = await checkOutService(amount,id)       
+
       res.send(payment);
+
     } catch (error) {
       console.log(error);
       res.json({message: error});
@@ -25,3 +21,8 @@ const checkOut= async (req, res) => {
   module.exports = {
     checkOut,
   };
+
+  //billing_details.email
+  //billing_details.user
+
+ 
