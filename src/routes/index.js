@@ -2,7 +2,7 @@ const { Router } = require("express");
 const router = Router();
 
 const gameSearchApi = require('./gameSearchApi.routes.js');
-const getDetails = require('./getDetails.routes')
+const getDetails = require('./getDetails.routes.js')
 const getAllGames = require('./getAllGames.routes.js')
 const gameSearchDB = require('./gameSearchDB.routes.js')
 const filterByGenre = require('./filterByGenre.routes.js')
@@ -12,8 +12,9 @@ const createProduct = require('./products.routes.js')
 const filterAcum = require("./filtersAcum.routes.js")
 const filterByStore = require('./filterByStore.routes.js')
 const checkOut = require('./checkOut.routes.js')
-const editPost = require('./editPost.routes')
-const deletePost = require('./deletePost.routes')
+const editPost = require('./editPost.routes.js')
+const deletePost = require('./deletePost.routes.js')
+const sendEmail = require('./sendEmail.routes.js')
 
 //Import de routers:
 
@@ -56,9 +57,10 @@ router.use('/filterAcum', filterAcum)
 router.use("/filterByStore", filterByStore)
 
 //Checkout
-
 router.use("/checkOut", checkOut)
 
+//Nodemailer
+router.use("/sendEmail", sendEmail)
 
 
 module.exports = router;
