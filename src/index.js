@@ -1,6 +1,8 @@
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
 const routes = require("./routes");
+const cors = require("cors");
+
 
 const {
   genreDB,
@@ -18,6 +20,7 @@ app.use(express.json());
 
 app.use("/", routes);
 
+router.use(cors({ origin: "http://localhost:3000" }));
 
 
 const server = app.listen(PORT, () =>{
