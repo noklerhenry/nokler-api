@@ -7,7 +7,12 @@ const filterByStore = async (req, res) => {
     if (stor) {
       const products = await prisma.productsKey.findMany({
         include: {
-          game: true,
+          game: {
+            include: {
+              genres: true,
+            },
+          },
+          platform: true,
           store: true,
         },
         where: {

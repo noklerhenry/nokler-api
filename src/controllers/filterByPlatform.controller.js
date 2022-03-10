@@ -8,10 +8,15 @@ const filterByPlatform = async (req, res) => {
     try {
         if(plat){
             const platFilter = await prisma.productsKey.findMany({
-                include: {
-                     platform: true,
-                    game:true,
+              include: {
+                game: {
+                  include: {
+                    genres: true,
                   },
+                },
+                platform: true,
+                store: true,
+              },
                 where: {
                     platform: {
                       name: plat,

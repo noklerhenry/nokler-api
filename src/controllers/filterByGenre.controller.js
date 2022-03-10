@@ -13,11 +13,13 @@ const filterByGenre = async (req, res) => {
               genres: true,
             },
           },
+          platform: true,
+          store: true,
         },
       });
 // console.log(products)
 
-      let filteredProducts = []
+      let filteredProducts = [...products]
 
         for (let i = 0; i < products.length; i++) {
             let arrayGenre = products[i].game.genres
