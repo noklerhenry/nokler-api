@@ -2,7 +2,7 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 const orderByPrice= async (req, res) => {
-
+const {acs,des} = req.query
 try {
     const allDBProducts = await prisma.productsKey.findMany({
       include: {
@@ -15,6 +15,13 @@ try {
         store: true,
       },
     });
+
+    let sortProduct = allDBProducts
+
+if(asc){
+    
+}
+
 } catch (error) {
     console.log(error);
   }
