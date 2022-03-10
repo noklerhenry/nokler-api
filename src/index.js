@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.use("/", routes);
 
-router.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "http://localhost:3000" }));
 
 
 const server = app.listen(PORT, () =>{
