@@ -22,6 +22,15 @@ const paginationService = async (idCursor) => {
     const cursorObj = idCursor === "" ? undefined : { id: Number(idCursor) };
 
     const products = await prisma.productsKey.findMany({
+      include: {
+        store: true,
+        platform: true,
+        game: {
+          include: {
+            genres: true,
+          },
+        },
+      },
       take: limit,
       skip: idCursor !== "" ? 1 : 0,
       cursor: cursorObj,

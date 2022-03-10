@@ -1,11 +1,8 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient()
 
-const {
-    searchApiGamesByName
-} = require('../services/searchByName.service')
 
-const searchGamesController = async (req, res) => {
+const gameSearchDB = async (req, res) => {
     const name = req.query.name    
     try {
         if(name){
@@ -22,12 +19,7 @@ const searchGamesController = async (req, res) => {
                     productKey: true,
                 }
             })
-            if(getDBGames.length < 1) {
-                const apiGames = await searchApiGamesByName(name)      
-                console.log('api games')      
-                res.json(apiGames)
-            } else {
-                console.log(getDBGames)
+            if(getDBGames.length >= 1) {
                 const formatDBGames = getDBGames.map(data => {
                         return {
                         id: data.id,
@@ -44,17 +36,19 @@ const searchGamesController = async (req, res) => {
                 )
                 console.log('database games')
                 res.status(200).json(formatDBGames)    
+            } else {
+                res.json('Game not found')
             }
         } else {
-            res.json('Game not found')
+            res.status(200).json('Nothing to search')    
         }
 
     } catch (error) {
-        console.log(error)
+        console.log('Game not found')
         res.status(500).json(error.message)
     }
 }
 
 module.exports = {
-    searchGamesController
+    gameSearchDB
 };

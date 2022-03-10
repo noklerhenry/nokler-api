@@ -24,8 +24,5 @@ router.use(cors({ origin: "http://localhost:3000" }));
 
 
 const server = app.listen(PORT, () =>{
-  genreDB()
-  platformsDB() 
-  storesDB()
   console.log(`🚀 Server ready at: http://localhost:${PORT}`)
 });

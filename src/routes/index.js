@@ -1,10 +1,10 @@
 const { Router } = require("express");
 const router = Router();
 
-const searchGames = require('./searchByName.routes.js');
-const getDetails = require('./getDetails.routes')
+const gameSearchApi = require('./gameSearchApi.routes.js');
+const getDetails = require('./getDetails.routes.js')
 const getAllGames = require('./getAllGames.routes.js')
-const userSearch = require('./userSearch.routes.js')
+const gameSearchDB = require('./gameSearchDB.routes.js')
 const filterByGenre = require('./filterByGenre.routes.js')
 const platformFilter = require("./filterByPlatform.routes.js")
 const filterByRegion = require("./filterByRegion.routes.js")
@@ -12,17 +12,26 @@ const createProduct = require('./products.routes.js')
 const filterAcum = require("./filtersAcum.routes.js")
 const filterByStore = require('./filterByStore.routes.js')
 const checkOut = require('./checkOut.routes.js')
+const editPost = require('./editPost.routes.js')
+const deletePost = require('./deletePost.routes.js')
+const sendEmail = require('./sendEmail.routes.js')
 
 //Import de routers:
 
 //All games
 router.use('/allGames', getAllGames)
 
-//Search games: 1-DB ; 2-API **ADMIN**
-router.use('/searchByName', searchGames)
+//Search games API **ADMIN**
+router.use('/gameSearchApi', gameSearchApi)
+ 
+// Edit posts **ADMIN**
+router.use('/edit', editPost)
+
+// Delete posts **ADMIN**
+router.use('/delete', deletePost)
 
 //Search games DB **USER**
-router.use('/userSearch', userSearch)
+router.use('/gameSearchDB', gameSearchDB)
 
 //Get game details
 router.use('/details', getDetails)
@@ -48,9 +57,10 @@ router.use('/filterAcum', filterAcum)
 router.use("/filterByStore", filterByStore)
 
 //Checkout
-
 router.use("/checkOut", checkOut)
 
+//Nodemailer
+router.use("/sendEmail", sendEmail)
 
 
 module.exports = router;
