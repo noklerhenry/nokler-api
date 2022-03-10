@@ -38,6 +38,13 @@ const filterByGenre = async (req, res) => {
   }
 };
 
+const filterGenre = (array, query) => {
+  if (typeof query === "string") {
+    array = array.filter((g) => g.game.genres[0].name.includes(query));
+    return array;
+  }
+};
+
 module.exports = {
-  filterByGenre,
+  filterByGenre,filterGenre
 };

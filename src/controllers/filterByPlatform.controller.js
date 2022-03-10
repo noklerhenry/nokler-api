@@ -25,6 +25,13 @@ const filterByPlatform = async (req, res) => {
     }
 }
 
+const filterPlatform = (array, query) => {
+  if (typeof query === "string") {
+    array = array.filter((g) => g.platform.name.includes(query));
+    return array;
+  }
+};
+
 module.exports = {
-    filterByPlatform,
+    filterByPlatform, filterPlatform
   };

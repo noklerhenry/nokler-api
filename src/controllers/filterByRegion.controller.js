@@ -24,6 +24,13 @@ const filterByRegion = async (req, res) => {
     }
 }
 
+const filterRegion = (array, query) => {
+  if (typeof query === "string") {
+    array = array.filter((g) => g.region.includes(query));
+    return array;
+  }
+};
+
 module.exports = {
-    filterByRegion,
+    filterByRegion,filterRegion
   };
