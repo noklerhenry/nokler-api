@@ -12,7 +12,6 @@ const stripe = new Stripe(
 
 router.use(cors({ origin: "http://localhost:3000" }));
 
-router.post("/", checkOut);
-
-
 module.exports = router;
+
+router.post("/", checkOut);

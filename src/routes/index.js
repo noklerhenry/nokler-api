@@ -15,24 +15,22 @@ const checkOut = require('./checkOut.routes.js')
 const editPost = require('./editPost.routes.js')
 const deletePost = require('./deletePost.routes.js')
 const sendEmail = require('./sendEmail.routes.js')
-const test = require('./testmail.routes')
-
 
 //Import de routers:
 
-//All games -> Trae todos los juegos de la DB
+//All games
 router.use('/allGames', getAllGames)
 
-//Search games API -> busca todos los juegos de la API
+//Search games API **ADMIN**
 router.use('/gameSearchApi', gameSearchApi)
  
-// Edit posts **ADMIN** (incompleta)
+// Edit posts **ADMIN**
 router.use('/edit', editPost)
 
-// Delete posts **ADMIN** -> borra post por ID
+// Delete posts **ADMIN**
 router.use('/delete', deletePost)
 
-//Search games DB -> busca por nombre en la DB
+//Search games DB **USER**
 router.use('/gameSearchDB', gameSearchDB)
 
 //Get game details
@@ -63,6 +61,6 @@ router.use("/checkOut", checkOut)
 
 //Nodemailer
 router.use("/sendEmail", sendEmail)
-router.use('/test', test)
+
 
 module.exports = router;
