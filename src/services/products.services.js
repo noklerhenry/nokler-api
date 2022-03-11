@@ -18,6 +18,28 @@ const createProduct = async (product) => {
       const newGame = await prisma.game.create({
         data: {
           name: game.name,
+          released_at: new Date(game.released),
+          rating: game.rating,
+          description: game.description,
+          trailer: game.trailer,
+          image: game.img,
+          genres: {
+            connect: game.genres.map((genre) => ({
+              name: genre,
+            })),
+          },
+          platforms: {
+            connect: game.platform.map((platform) => ({
+              name: platform,
+            })),
+          },
+          screenshots: {
+            create: game.screenshots.map((screenshot) => {
+              return {
+                url: screenshot,
+              };
+            }),
+          },
         },
       });
 
@@ -32,7 +54,7 @@ const createProduct = async (product) => {
           },
           game: {
             connect: {
-              id: gameSearch.id,
+              id: newGame.id,
             },
           },
           user: {
