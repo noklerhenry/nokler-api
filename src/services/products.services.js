@@ -45,7 +45,7 @@ const createProduct = async (product) => {
 
       const newProduct = await prisma.productsKey.create({
         data: {
-          price,
+          price: Number(price),
           key,
           store: {
             connect: {
@@ -75,7 +75,7 @@ const createProduct = async (product) => {
       console.log("game already exists");
       const newProduct = await prisma.productsKey.create({
         data: {
-          price,
+          price: Number(price),
           key,
           store: {
             connect: {
@@ -100,7 +100,6 @@ const createProduct = async (product) => {
           region,
         },
       });
-
       return newProduct;
     }
   } catch (error) {
