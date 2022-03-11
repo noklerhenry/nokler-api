@@ -1,0 +1,148 @@
+{
+    "id": "pi_3KbmZlKlOgZYCvia1YlsBGoo",
+    "object": "payment_intent",
+    "amount": 46200,
+    "amount_capturable": 0,
+    "amount_received": 46200,
+    "application": null,
+    "application_fee_amount": null,
+    "automatic_payment_methods": null,
+    "canceled_at": null,
+    "cancellation_reason": null,
+    "capture_method": "automatic",
+    "charges": {
+        "object": "list",
+        "data": [
+            {
+                "id": "ch_3KbmZlKlOgZYCvia1kwphL6Z",
+                "object": "charge",
+                "amount": 46200,
+                "amount_captured": 46200,
+                "amount_refunded": 0,
+                "application": null,
+                "application_fee": null,
+                "application_fee_amount": null,
+                "balance_transaction": "txn_3KbmZlKlOgZYCvia1tt0z7uJ",
+                "billing_details": {
+                    "address": {
+                        "city": null,
+                        "country": null,
+                        "line1": null,
+                        "line2": null,
+                        "postal_code": "42424",
+                        "state": null
+                    },
+                    "email": "gonzalosoria.sg@gmail.com",
+                    "name": "qondaprro0@gmail.com",
+                    "phone": null
+                },
+                "calculated_statement_descriptor": "Stripe",
+                "captured": true,
+                "created": 1646920966,
+                "currency": "usd",
+                "customer": null,
+                "description": null,
+                "destination": null,
+                "dispute": null,
+                "disputed": false,
+                "failure_code": null,
+                "failure_message": null,
+                "fraud_details": {},
+                "invoice": null,
+                "livemode": false,
+                "metadata": {},
+                "on_behalf_of": null,
+                "order": null,
+                "outcome": {
+                    "network_status": "approved_by_network",
+                    "reason": null,
+                    "risk_level": "normal",
+                    "risk_score": 64,
+                    "seller_message": "Payment complete.",
+                    "type": "authorized"
+                },
+                "paid": true,
+                "payment_intent": "pi_3KbmZlKlOgZYCvia1YlsBGoo",
+                "payment_method": "pm_1KbmMzKlOgZYCviaGaUAqt0I",
+                "payment_method_details": {
+                    "card": {
+                        "brand": "visa",
+                        "checks": {
+                            "address_line1_check": null,
+                            "address_postal_code_check": "pass",
+                            "cvc_check": null
+                        },
+                        "country": "US",
+                        "exp_month": 4,
+                        "exp_year": 2024,
+                        "fingerprint": "l1FkA4t6UNZEdRCH",
+                        "funding": "credit",
+                        "installments": null,
+                        "last4": "4242",
+                        "network": "visa",
+                        "three_d_secure": null,
+                        "wallet": null
+                    },
+                    "type": "card"
+                },
+                "receipt_email": null,
+                "receipt_number": null,
+                "receipt_url": "https://pay.stripe.com/receipts/acct_1KbQVvKlOgZYCvia/ch_3KbmZlKlOgZYCvia1kwphL6Z/rcpt_LINKid6rV7hWklJXwUbB2vIMd5uD9oL",
+                "refunded": false,
+                "refunds": {
+                    "object": "list",
+                    "data": [],
+                    "has_more": false,
+                    "total_count": 0,
+                    "url": "/v1/charges/ch_3KbmZlKlOgZYCvia1kwphL6Z/refunds"
+                },
+                "review": null,
+                "shipping": null,
+                "source": null,
+                "source_transfer": null,
+                "statement_descriptor": null,
+                "statement_descriptor_suffix": null,
+                "status": "succeeded",
+                "transfer_data": null,
+                "transfer_group": null
+            }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/charges?payment_intent=pi_3KbmZlKlOgZYCvia1YlsBGoo"
+    },
+    "client_secret": "pi_3KbmZlKlOgZYCvia1YlsBGoo_secret_KP5ljUT0sZ1NDAPnDq4QAhmMB",
+    "confirmation_method": "automatic",
+    "created": 1646920965,
+    "currency": "usd",
+    "customer": null,
+    "description": null,
+    "invoice": null,
+    "last_payment_error": null,
+    "livemode": false,
+    "metadata": {},
+    "next_action": null,
+    "on_behalf_of": null,
+    "payment_method": "pm_1KbmMzKlOgZYCviaGaUAqt0I",
+    "payment_method_options": {
+        "card": {
+            "installments": null,
+            "network": null,
+            "request_three_d_secure": "automatic"
+        }
+    },
+    "payment_method_types": [
+        "card"
+    ],
+    "processing": null,
+    "receipt_email": null,
+    "review": null,
+    "setup_future_usage": null,
+    "shipping": null,
+    "source": null,
+    "statement_descriptor": null,
+    "statement_descriptor_suffix": null,
+    "status": "succeeded",
+    "transfer_data": null,
+    "transfer_group": null
+}

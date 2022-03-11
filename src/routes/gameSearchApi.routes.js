@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     searchGamesController
-} = require('../controllers/searchByName.controller.js')
+} = require('../controllers/gameSearchApi.controller.js')
 
 
 router.get('/', searchGamesController)

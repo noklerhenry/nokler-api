@@ -1,104 +1,83 @@
-const { PrismaClient } = require("@prisma/client");
-
+const axios = require('axios');
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const genreData = [
-  {
-    name: "Action",
-  },
-  {
-    name: "Indie",
-  },
-  {
-    name: "Adventure",
-  },
-  {
-    name: "RPG",
-  },
-  {
-    name: "Strategy",
-  },
-  {
-    name: "Shooter",
-  },
-  {
-    name: "Casual",
-  },
-  {
-    name: "Simulation",
-  },
-  {
-    name: "Puzzle",
-  },
-  {
-    name: "Arcade",
-  },
-  {
-    name: "Platformer",
-  },
-  {
-    name: "Racing",
-  },
-  {
-    name: "Massively Multiplayer",
-  },
-  {
-    name: "Sports",
-  },
-  {
-    name: "Fighting",
-  },
-  {
-    name: "Family",
-  },
-  {
-    name: "Board",
-  },
-  {
-    name: "Educational",
-  },
-  {
-    name: "Card",
-  },
-];
+const KEY = `?key=${process.env.RAWG_API_KEY}`;
 
-const gameData = [
-  {
-    name: "The Witcher 3: Wild Hunt",
-    genres: {
-      connect: [{ id: "119" }, { id: "120" }],
-    },
-  },
-];
+const baseUrl = 'https://api.rawg.io/api/';
 
-const main = async () => {
-  console.log("Seeding Genres...");
-    for (const g of genreData) {
-      const genre = await prisma.genre.create({ data: g });
-      console.log(`Seeded ${genre.name}`);
-    }
-  console.log("Seeding Genres... Done!");
-  const game = await prisma.game.create({
-    data: {
-      name: "The Witcher 3: Wild Hunt 23",
-      genres: {
-        connect: [{ name: "Educational" }, { name: "Board" }],
-      },
-    },
-    include: {
-      genres: true,
-    },
-  });
-  console.log(game);
-    for (const g of gameData) {
-      const game = await prisma.Game.create({ data: g });
-      console.log(`Seeded ${game.name}`);
-    }
-  console.log("Seeding Games... Done!");
-
-  console.log("Seeding finished!");
+const genresData = async () => {
+  try {
+    const data = await axios
+      .get(`${baseUrl}genres${KEY}`)
+      .then((res) => res.data.results);
+    return data.map((genre) => {
+      return {
+        name: genre.name,
+      };
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
+const storesData = async () => {
+  try {
+    const data = await axios
+      .get(`${baseUrl}stores${KEY}`)
+      .then((res) => res.data.results);
+    return data.map((genre) => {
+      return {
+        name: genre.name,
+      };
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
+const platformsData = async () => {
+  try {
+    const data = await axios
+      .get(`${baseUrl}platforms${KEY}`)
+      .then((res) => res.data.results);
+    return data.map((genre) => {
+      return {
+        name: genre.name,
+      };
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
+const main = async () => {
+  try {
+    const genres = await genresData();
+    const stores = await storesData();
+    const platforms = await platformsData();
+
+    await prisma.genre.createMany({ data: genres, skipDuplicates: true });
+    await prisma.store.createMany({ data: stores, skipDuplicates: true });
+    await prisma.platform.createMany({ data: platforms, skipDuplicates: true });
+    // await prisma.game.create({
+    //   data: {
+    //     name: 'test',
+    //     genres: { connect: [{ name: 'Indie' }, { name: 'RPG' }] }
+    //   },
+    // });
+    await prisma.game.create({
+      data: {
+        name: "The Witcher 3: Wild Hunt",
+        genres: { connect: [{ id: 3 }, { id: 6 }] }
+      },
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = main;
 main()
   .catch((e) => {
     console.error(e);

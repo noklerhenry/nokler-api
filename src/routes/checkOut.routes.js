@@ -7,11 +7,12 @@ const { checkOut } = require("../controllers/checkOut.controller.js");
 const router = express();
 
 const stripe = new Stripe(
-  "sk_test_51KbQVvKlOgZYCviaM26mtACmLWGQDttlg2ZxMGKJonC3OfVNKYzxWXbeMilMKjCsk48S7yLrQayzk7DG5ZORFWBS00UQUWQ6TU"
+  process.env.STRIPE_SECRET_KEY,
 );
 
 router.use(cors({ origin: "http://localhost:3000" }));
 
-module.exports = router;
-
 router.post("/", checkOut);
+
+
+module.exports = router;

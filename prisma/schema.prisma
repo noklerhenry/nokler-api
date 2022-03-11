@@ -13,11 +13,19 @@ model Game {
   released_at DateTime?
   rating      Float?
   image       String?       @db.VarChar(2048)
+  screenshots Screenshots[]
   description String?
   trailer     String?       @db.VarChar(2048)
   genres      Genre[]
   platforms   Platform[]
   productKey  ProductsKey[]
+}
+
+model Screenshots {
+  id     String @id @default(dbgenerated("gen_random_uuid()"))
+  game   Game   @relation(fields: [gameId], references: [id])
+  gameId String
+  url    String @db.VarChar(2048)
 }
 
 model Genre {
@@ -54,7 +62,7 @@ model ProductsKey {
   user       User     @relation(fields: [userId], references: [id])
   userId     Int
   region     String
- 
+  available  Boolean  @default(true)
 }
 
 
@@ -87,12 +95,9 @@ model Payment {
 
 model User {
   id          Int           @id @default(autoincrement())
-  name        String        @unique @db.VarChar(50)
   email       String        @unique @db.VarChar(50)
-  password    String        @db.VarChar(50)
   rol         Rol           @default(USER)
   state       State         @default(STANDARD)
-  img         String
   userProduct ProductsKey[]
   order       Order[]
   enable      Boolean       @default(true)

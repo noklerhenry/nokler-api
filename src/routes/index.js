@@ -1,11 +1,12 @@
 const { Router } = require("express");
 const router = Router();
 
-const checkOut = require('./checkOut.routes.js')
+
 const searchGames = require('./searchByName.routes.js');
-const getDetails = require('./getDetails.routes')
+const gameSearchApi = require('./gameSearchApi.routes.js');
+const getDetails = require('./getDetails.routes.js')
 const getAllGames = require('./getAllGames.routes.js')
-const userSearch = require('./userSearch.routes.js')
+const gameSearchDB = require('./gameSearchDB.routes.js')
 const filterByGenre = require('./filterByGenre.routes.js')
 const platformFilter = require("./filterByPlatform.routes.js")
 const filterByRegion = require("./filterByRegion.routes.js")
@@ -15,17 +16,29 @@ const filterByStore = require('./filterByStore.routes.js')
 const genreList = require('./getGenres.routes.js')
 const storeList = require('./getStores.routes.js')
 const platformList = require('./getPlatforms.routes.js')
+const checkOut = require('./checkOut.routes.js')
+const editPost = require('./editPost.routes.js')
+const deletePost = require('./deletePost.routes.js')
+const sendEmail = require('./sendEmail.routes.js')
+const test = require('./testmail.routes')
+
 
 //Import de routers:
 
-//All games
+//All games -> Trae todos los juegos de la DB
 router.use('/allGames', getAllGames)
 
-//Search games: 1-DB ; 2-API **ADMIN**
-router.use('/searchByName', searchGames)
+//Search games API -> busca todos los juegos de la API
+router.use('/gameSearchApi', gameSearchApi)
+ 
+// Edit posts **ADMIN** (incompleta)
+router.use('/edit', editPost)
 
-//Search games DB **USER**
-router.use('/userSearch', userSearch)
+// Delete posts **ADMIN** -> borra post por ID
+router.use('/delete', deletePost)
+
+//Search games DB -> busca por nombre en la DB
+router.use('/gameSearchDB', gameSearchDB)
 
 //Get game details
 router.use('/details', getDetails)
@@ -51,7 +64,6 @@ router.use('/filterAcum', filterAcum)
 router.use("/filterByStore", filterByStore)
 
 //Checkout
-
 router.use("/checkOut", checkOut)
 
 //getGenres
@@ -67,5 +79,8 @@ router.use("/platformList", platformList)
 
 
 
+//Nodemailer
+router.use("/sendEmail", sendEmail)
+router.use('/test', test)
 
 module.exports = router;
