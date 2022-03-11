@@ -2,7 +2,7 @@ const { Router } = require("express");
 const router = Router();
 
 
-const searchGames = require('./searchByName.routes.js');
+
 const gameSearchApi = require('./gameSearchApi.routes.js');
 const getDetails = require('./getDetails.routes.js')
 const getAllGames = require('./getAllGames.routes.js')
