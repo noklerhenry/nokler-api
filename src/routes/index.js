@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
+const checkOut = require('./checkOut.routes.js')
 const searchGames = require('./searchByName.routes.js');
 const getDetails = require('./getDetails.routes')
 const getAllGames = require('./getAllGames.routes.js')
@@ -11,7 +12,9 @@ const filterByRegion = require("./filterByRegion.routes.js")
 const createProduct = require('./products.routes.js')
 const filterAcum = require("./filtersAcum.routes.js")
 const filterByStore = require('./filterByStore.routes.js')
-const checkOut = require('./checkOut.routes.js')
+const genreList = require('./getGenres.routes.js')
+const storeList = require('./getStores.routes.js')
+const platformList = require('./getPlatforms.routes.js')
 
 //Import de routers:
 
@@ -50,6 +53,18 @@ router.use("/filterByStore", filterByStore)
 //Checkout
 
 router.use("/checkOut", checkOut)
+
+//getGenres
+
+router.use("/genreList", genreList)
+
+//getStores
+router.use("/storeList", storeList)
+
+//getPlatforms
+router.use("/platformList", platformList)
+
+
 
 
 
