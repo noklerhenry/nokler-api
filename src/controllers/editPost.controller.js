@@ -4,14 +4,23 @@ const prisma = new PrismaClient()
 
 const editPost = async (req, res) => {
     const { id } = req.params
-    const { updateValue } = req.body
+    const { updateValues } = req.body
 
     try {
         const post = await prisma.game.update({
             where: { id: id },
+            // include:{
+            //     genres:true
+            // },
             data: {
-              name: updateValue,
+                name: updateValues.name,
+                description: updateValues.description,
+                // genres:updateValues.genres,
             },
+            include: {
+                platforms:updateValues.genres,
+
+            }
           })
          
         console.log('Update succes!')
