@@ -47,6 +47,7 @@ const createProduct = async (product) => {
         data: {
           price: Number(price),
           key,
+          available: true
           store: {
             connect: {
               name: store,
@@ -77,6 +78,7 @@ const createProduct = async (product) => {
         data: {
           price: Number(price),
           key,
+          available: true
           store: {
             connect: {
               name: store,
