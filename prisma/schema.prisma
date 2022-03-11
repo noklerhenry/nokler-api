@@ -62,7 +62,7 @@ model ProductsKey {
   user       User     @relation(fields: [userId], references: [id])
   userId     Int
   region     String
-  available  Boolean
+  available  Boolean  @default(true)
 }
 
 model Order {
