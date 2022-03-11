@@ -54,7 +54,10 @@ model ProductsKey {
   user       User     @relation(fields: [userId], references: [id])
   userId     Int
   region     String
+ 
 }
+
+
 
 model Order {
   id        Int      @id @default(autoincrement())
