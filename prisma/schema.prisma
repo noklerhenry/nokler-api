@@ -13,6 +13,7 @@ model Game {
   released_at DateTime?
   rating      Float?
   image       String?       @db.VarChar(2048)
+  screenshots Screenshots[]
   description String?
   trailer     String?       @db.VarChar(2048)
   genres      Genre[]
@@ -20,7 +21,12 @@ model Game {
   productKey  ProductsKey[]
 }
 
-
+model Screenshots {
+  id     String @id @default(dbgenerated("gen_random_uuid()"))
+  game   Game   @relation(fields: [gameId], references: [id])
+  gameId String
+  url    String @db.VarChar(2048)
+}
 
 model Genre {
   id    Int    @id @default(autoincrement())
