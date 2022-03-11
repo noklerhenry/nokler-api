@@ -17,8 +17,8 @@ const checkOutService = async (amount, id) => {
         confirm: true,
       });
 
-      const mailResult = sendMail(payment)
-      
+      await sendMail(payment)
+
       return payment
 }
 
