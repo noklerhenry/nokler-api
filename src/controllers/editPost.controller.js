@@ -7,24 +7,28 @@ const editPost = async (req, res) => {
     const { updateValues } = req.body
 
     try {
-        const post = await prisma.game.update({
-            where: { id: id },
-            // include:{
-            //     genres:true
-            // },
-            data: {
-                name: updateValues.name,
-                description: updateValues.description,
-                // genres:updateValues.genres,
-            },
-            include: {
-                platforms:updateValues.genres,
-
+        const productToEdit = await prisma.productsKey.findUnique({
+            where: { 
+                id: Number(id) 
             }
-          })
-         
-        console.log('Update succes!')
-        res.status(200).json(post)        
+        })
+        if(productToEdit) {
+            const productEdited = await prisma.productsKey.update({
+                where: { id: Number(id) },
+                data: {
+                    price: updateValues.price === '' ?  productToEdit.price : Number(updateValues.price) ,
+                    key: updateValues.key === '' ? productToEdit.key :  updateValues.key  ,
+                    region: updateValues.region === '' ?  productToEdit.region : updateValues.region ,
+                    storeId: updateValues.storeId === '' ? productToEdit.storeId : Number(updateValues.storeId) ,
+                    platformId: updateValues.platformId === '' ? productToEdit.platformId : Number(updateValues.platformId)
+                }
+            })             
+            console.log('Update succes!')
+            res.status(200).json(productEdited)        
+        } else {
+            console.log("Invalid ID product")
+            res.status(403).send("The product ID is incorrect, enter a valid ID.")
+        }
     } catch (error) {
         console.log(error)
         res.status(500).json(error.message)        
