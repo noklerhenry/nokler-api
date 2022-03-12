@@ -66,18 +66,6 @@ const sendMail = async (payment) => {
     }
 }
 
-let mailOptions = {
-    from: "Nokler",
-    to: "gonzalosoria.sg@gmail.com",
-    subject: "prueba de mail con nodemailer",
-    text: "nokler games papá"
-}
-
-transporter.sendMail(mailOptions, (error, info) => {
-    if(error) {
-        res.status(500).send(error.message)
-    } else {
-        console.log("Email enviado")
-        res.status(200).json(req.body)
-    }
-} )
+module.exports = {
+    sendMail
+};

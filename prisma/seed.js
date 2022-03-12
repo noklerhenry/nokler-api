@@ -66,12 +66,12 @@ const main = async () => {
     //     genres: { connect: [{ name: 'Indie' }, { name: 'RPG' }] }
     //   },
     // });
-    await prisma.game.create({
-      data: {
-        name: "The Witcher 3: Wild Hunt",
-        genres: { connect: [{ id: 3 }, { id: 6 }] }
-      },
-    });
+    // await prisma.game.create({
+    //   data: {
+    //     name: "The Witcher 3: Wild Hunt",
+    //     genres: { connect: [{ id: 116 }, { id: 117 }] }
+    //   },
+    // });
   } catch (error) {
     throw error;
   }

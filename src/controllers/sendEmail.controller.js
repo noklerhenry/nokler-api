@@ -1,37 +1,15 @@
-const nodemailer = require('nodemailer')
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
+const {
+    sendMail
+} = require('../services/sendEmail.service')
 
 
 const sendEmail = async (req, res) => {
-    // const { mailTo } = req.body;
+    sendMail()
+        .then(result => res.status(200).send('mail enviado'))
+        .catch(error => console.log(error.message))
 
-    let transporter = nodemailer.createTransport({
-        host:"smtp.ethereal.email",
-        post:587,
-        secure:false,
-        auth: {
-            user: "noklerhenry@gmail.com",
-            pass: "	nuyQi3b3gDZiGFi"
-        }
-    })
-
-    let mailOptions = {
-        from: "Nokler",
-        to: "gonzalosoria.sg@gmail.com",
-        subject: "prueba de mail con nodemailer",
-        text: "nokler games papá"
-    }
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if(error) {
-            res.status(500).send(error.message)
-        } else {
-            console.log("Email enviado")
-            res.status(200).json(req.body)
-        }
-    } )
 }
+
 
 module.exports = {
     sendEmail
