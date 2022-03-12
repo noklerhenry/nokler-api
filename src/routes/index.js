@@ -1,6 +1,8 @@
 const { Router } = require("express");
 const router = Router();
 
+
+
 const gameSearchApi = require('./gameSearchApi.routes.js');
 const getDetails = require('./getDetails.routes.js')
 const getAllGames = require('./getAllGames.routes.js')
@@ -11,10 +13,14 @@ const filterByRegion = require("./filterByRegion.routes.js")
 const createProduct = require('./products.routes.js')
 const filterAcum = require("./filtersAcum.routes.js")
 const filterByStore = require('./filterByStore.routes.js')
+const genreList = require('./getGenres.routes.js')
+const storeList = require('./getStores.routes.js')
+const platformList = require('./getPlatforms.routes.js')
 const checkOut = require('./checkOut.routes.js')
 const editPost = require('./editPost.routes.js')
 const deletePost = require('./deletePost.routes.js')
 const sendEmail = require('./sendEmail.routes.js')
+const getProductById = require('./getProductById.routes.js')
 const test = require('./testmail.routes')
 
 
@@ -52,6 +58,9 @@ router.use('/filterByRegion', filterByRegion)
 //Post product
 router.use('/product', createProduct)
 
+//getProduct
+router.use('/product', createProduct)
+
 //FilterAcum
 router.use('/filterAcum', filterAcum)
 
@@ -60,6 +69,22 @@ router.use("/filterByStore", filterByStore)
 
 //Checkout
 router.use("/checkOut", checkOut)
+
+//getGenres
+
+router.use("/genreList", genreList)
+
+//getStores
+router.use("/storeList", storeList)
+
+//getPlatforms
+router.use("/platformList", platformList)
+
+//getProductById
+router.use("/getProductById", getProductById)
+
+
+
 
 //Nodemailer
 router.use("/sendEmail", sendEmail)

@@ -7,10 +7,15 @@ const filterByRegion = async (req, res) => {
     try {
         if(regi){
             const regionFilter = await prisma.productsKey.findMany({
-                include: {
-                    platform: true,
-                    game:true,
+              include: {
+                game: {
+                  include: {
+                    genres: true,
                   },
+                },
+                platform: true,
+                store: true,
+              },
                 where: {
                     region: {
                       equals: regi,
@@ -24,6 +29,13 @@ const filterByRegion = async (req, res) => {
     }
 }
 
+const filterRegion = (array, query) => {
+  if (typeof query === "string") {
+    array = array.filter((g) => g.region.includes(query));
+    return array;
+  }
+};
+
 module.exports = {
-    filterByRegion,
+    filterByRegion,filterRegion
   };
