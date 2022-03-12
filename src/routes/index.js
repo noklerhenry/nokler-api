@@ -22,6 +22,7 @@ const deletePost = require('./deletePost.routes.js')
 const sendEmail = require('./sendEmail.routes.js')
 const getProductById = require('./getProductById.routes.js')
 const test = require('./testmail.routes')
+const getAllProducts = require('./getProducts.route')
 
 
 //Import de routers:
@@ -89,5 +90,9 @@ router.use("/getProductById", getProductById)
 //Nodemailer
 router.use("/sendEmail", sendEmail)
 router.use('/test', test)
+
+
+
+router.use('/getProducts', getAllProducts)
 
 module.exports = router;
