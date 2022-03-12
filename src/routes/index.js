@@ -20,6 +20,7 @@ const checkOut = require('./checkOut.routes.js')
 const editPost = require('./editPost.routes.js')
 const deletePost = require('./deletePost.routes.js')
 const sendEmail = require('./sendEmail.routes.js')
+const getProductById = require('./getProductById.routes.js')
 const test = require('./testmail.routes')
 
 
@@ -57,6 +58,9 @@ router.use('/filterByRegion', filterByRegion)
 //Post product
 router.use('/product', createProduct)
 
+//getProduct
+router.use('/product', createProduct)
+
 //FilterAcum
 router.use('/filterAcum', filterAcum)
 
@@ -75,6 +79,9 @@ router.use("/storeList", storeList)
 
 //getPlatforms
 router.use("/platformList", platformList)
+
+//getProductById
+router.use("/getProductById", getProductById)
 
 
 
