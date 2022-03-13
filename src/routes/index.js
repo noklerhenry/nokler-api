@@ -81,6 +81,8 @@ router.use('/delete', deletePost)
 //getProduct -> Paginacion de productos.
 router.use('/product', createProduct)
 
+//getProductByGame
+router.use("/getProductByGame", getProductByGame)
 
 
 //DB LOAD
@@ -95,8 +97,6 @@ router.use("/storeList", storeList)
 router.use("/platformList", platformList)
 
 
-//getProductByGame
-router.use("/getProductByGame", getProductByGame)
 
 
 //Checkout

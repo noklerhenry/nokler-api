@@ -18,7 +18,10 @@ const getProductByGame = async (req, res) => {
         },
         where: {
           game: {
-            name: game,
+            name: {
+                contains: game,
+                mode: 'insensitive'  
+            }
           },
         },
       });
