@@ -17,8 +17,9 @@ const gameSearchDB = async (req, res) => {
                     genres: true,
                     platforms: true,
                     productKey: true,
+                    screenshots: true
                 }
-            })
+                })
             if(getDBGames.length >= 1) {
                 const formatDBGames = getDBGames.map(data => {
                         return {
@@ -30,7 +31,8 @@ const gameSearchDB = async (req, res) => {
                         description: data.description,
                         genres: data.genres.map(genre => genre.name),
                         platform: data.platforms?.map(plat => plat.name),
-                        productKey: data.productKey?.map(pkey => pkey.key)             
+                        productKey: data.productKey?.map(pkey => pkey.key),
+                        screenshots: data.screenshots?.map(screenshot => screenshot.url)             
                         }
                     }                  
                 )
