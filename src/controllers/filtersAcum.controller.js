@@ -16,6 +16,7 @@ const filterAcum = async (req, res) => {
         game: {
           include: {
             genres: true,
+            screenshots: true,
           },
         },
         platform: true,
