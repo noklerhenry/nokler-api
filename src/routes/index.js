@@ -21,6 +21,7 @@ const editPost = require('./editPost.routes.js')
 const deletePost = require('./deletePost.routes.js')
 const sendEmail = require('./sendEmail.routes.js')
 const getProductById = require('./getProductById.routes.js')
+const getProductByGame = require('./getProductByGame.routes.js')
 const test = require('./testmail.routes')
 
 
@@ -83,6 +84,8 @@ router.use("/platformList", platformList)
 //getProductById
 router.use("/getProductById", getProductById)
 
+//getProductByGame
+router.use("/getProductByGame", getProductByGame)
 
 
 
