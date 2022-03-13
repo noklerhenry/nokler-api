@@ -1,8 +1,6 @@
 const { Router } = require("express");
 const router = Router();
 
-
-
 const gameSearchApi = require('./gameSearchApi.routes.js');
 const getDetails = require('./getDetails.routes.js')
 const getAllGames = require('./getAllGames.routes.js')
@@ -19,7 +17,6 @@ const platformList = require('./getPlatforms.routes.js')
 const checkOut = require('./checkOut.routes.js')
 const editPost = require('./editPost.routes.js')
 const deletePost = require('./deletePost.routes.js')
-const sendEmail = require('./sendEmail.routes.js')
 const getProductById = require('./getProductById.routes.js')
 const test = require('./testmail.routes')
 const getAllProducts = require('./getProducts.route')
@@ -27,28 +24,27 @@ const getAllProducts = require('./getProducts.route')
 
 //Import de routers:
 
+
+//INFO DE JUEGOS
+
 //All games -> Trae todos los juegos de la DB
 router.use('/allGames', getAllGames)
 
-//Search games API -> busca todos los juegos de la API
-router.use('/gameSearchApi', gameSearchApi)
- 
-// Edit posts **ADMIN** (incompleta)
-router.use('/edit', editPost)
-
-// Delete posts **ADMIN** -> borra post por ID
-router.use('/delete', deletePost)
-
-//Search games DB -> busca por nombre en la DB
+//Search games DB -> busca por nombre en la DB   /gameSearchDB?name=
 router.use('/gameSearchDB', gameSearchDB)
 
-//Get game details
+//Search games API -> busca todos los juegos de la API   /gameSearchApi?name=
+router.use('/gameSearchApi', gameSearchApi) 
+
+//Get game details -> trae todos los detalles de un juego de la API   /details/:id
 router.use('/details', getDetails)
 
 
+
+// FILTROS
+
 //Filter by genre
 router.use("/filterByGenre",filterByGenre)
-
 
 // Filter by platform
 router.use('/filterByPlatform', platformFilter)
@@ -56,23 +52,39 @@ router.use('/filterByPlatform', platformFilter)
 //Filter by region
 router.use('/filterByRegion', filterByRegion)
 
-//Post product
-router.use('/product', createProduct)
-
-//getProduct
-router.use('/product', createProduct)
+//Filter by Store
+router.use("/filterByStore", filterByStore)
 
 //FilterAcum
 router.use('/filterAcum', filterAcum)
 
-//Filter by Store
-router.use("/filterByStore", filterByStore)
 
-//Checkout
-router.use("/checkOut", checkOut)
+
+//ADMIN
+
+//Post product -> Creacion de productos  (se le pasa data por body)
+router.use('/product', createProduct)
+
+//Get Products -> trae TODOS los productos creados, con su info completa.
+router.use('/getProducts', getAllProducts)
+
+//getProductById -> trae UN producto en particular con su info completa.  /getProductById?ids=
+router.use("/getProductById", getProductById)
+
+// Edit posts -> edita informacion de un producto por ID   /edit/:id (id del producto)
+router.use('/edit', editPost)
+
+// Delete posts  -> borra post por ID   /delete/:id  (id del producto)
+router.use('/delete', deletePost)
+
+//getProduct -> Paginacion de productos.
+router.use('/product', createProduct)
+
+
+
+//DB LOAD
 
 //getGenres
-
 router.use("/genreList", genreList)
 
 //getStores
@@ -81,18 +93,16 @@ router.use("/storeList", storeList)
 //getPlatforms
 router.use("/platformList", platformList)
 
-//getProductById
-router.use("/getProductById", getProductById)
 
 
 
+//Checkout
+router.use("/checkOut", checkOut)
 
-//Nodemailer
-router.use("/sendEmail", sendEmail)
+//Nodemailer  -> testeo del servicio de email
 router.use('/test', test)
 
 
 
-router.use('/getProducts', getAllProducts)
 
 module.exports = router;
