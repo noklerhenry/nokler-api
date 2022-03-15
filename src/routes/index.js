@@ -21,6 +21,7 @@ const getProductById = require('./getProductById.routes.js')
 const getProductByGame = require('./getProductByGame.routes.js')
 const test = require('./testmail.routes')
 const getAllProducts = require('./getProducts.route')
+const users = require ("./users.routes.js")
 
 
 //Import de routers:
@@ -40,6 +41,8 @@ router.use('/gameSearchApi', gameSearchApi)
 //Get game details -> trae todos los detalles de un juego de la API   /details/:id
 router.use('/details', getDetails)
 
+//Users
+router.use('/users', users )
 
 
 // FILTROS
