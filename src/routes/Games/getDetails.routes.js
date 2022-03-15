@@ -2,11 +2,11 @@ const express = require('express')
 const router = express.Router();
 
 const {
-    storeList
-} = require('../controllers/getStores.controller.js')
+    getDetails
+} = require('../controllers/Games/getDetails.controller')
 
 
-router.get('/', storeList)
+router.get('/:id', getDetails)
 
 
 module.exports = router;

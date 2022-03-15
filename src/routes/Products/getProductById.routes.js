@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     getProductById
-} = require('../controllers/getProductById.controller.js')
+} = require('../controllers/Products/getProductById.controller.js')
 
 
 router.get('/', getProductById)

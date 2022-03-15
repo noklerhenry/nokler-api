@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     filterByPlatform
-} = require('../controllers/filterByPlatform.controller.js')
+} = require('../controllers/Filters/filterByPlatform.controller.js')
 
 
 router.get('/', filterByPlatform)

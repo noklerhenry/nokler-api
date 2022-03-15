@@ -3,7 +3,7 @@ const prisma = new PrismaClient()
 
 const {
     searchApiGamesByName
-} = require('../services/gameSearchApi.service')
+} = require('../../services/gameSearchApi.service')
 
 const searchGamesController = async (req, res) => {
     const { name } = req.query    

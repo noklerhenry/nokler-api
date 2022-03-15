@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     deletePost
-} = require('../controllers/deletePost.controller')
+} = require('../../controllers/Products/deletePost.controller')
 
 
 router.delete('/:id', deletePost)

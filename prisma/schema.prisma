@@ -50,7 +50,6 @@ model Store {
 model ProductsKey {
   id         Int      @id @default(autoincrement())
   price      Float
-  key        String   @unique @db.VarChar(50)
   store      Store    @relation(fields: [storeId], references: [id])
   storeId    Int
   game       Game     @relation(fields: [gameId], references: [id])
@@ -63,9 +62,16 @@ model ProductsKey {
   userId     Int
   region     String
   available  Boolean  @default(true)
+  key        Key[]
 }
 
+model Key{
+  id  Int      @id @default(autoincrement())
+  value String
+  productKey      ProductsKey     @relation(fields: [productId], references: [id])
+  productId Int
 
+}
 
 model Order {
   id        Int      @id @default(autoincrement())

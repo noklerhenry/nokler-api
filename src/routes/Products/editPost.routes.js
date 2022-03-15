@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     editPost
-} = require('../controllers/editPost.controller')
+} = require('../controllers/Products/editPost.controller')
 
 
 router.put('/:id', editPost)

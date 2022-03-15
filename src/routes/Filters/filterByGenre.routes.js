@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     filterByGenre
-} = require('../controllers/filterByGenre.controller.js')
+} = require('../../controllers/Filters/filterByGenre.controller.js')
 
 
 router.get('/', filterByGenre)

@@ -5,7 +5,7 @@ const {
   getUserController,
   getAllUsersController,
   updateUserController,
-} = require("../controllers/users.controllers");
+} = require("../../controllers/Users/users.controllers");
 
 router.post("/", createUserController);
 router.get("/:id", getUserController);

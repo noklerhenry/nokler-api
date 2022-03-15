@@ -5,7 +5,7 @@ const router = express();
 
 const { 
     getAllProducts
- } = require('../controllers/getAllProducts.controller');
+ } = require('../controllers/Products/getAllProducts.controller');
 
 
  

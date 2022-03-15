@@ -1,27 +1,27 @@
 const { Router } = require("express");
 const router = Router();
 
-const gameSearchApi = require('./gameSearchApi.routes.js');
-const getDetails = require('./getDetails.routes.js')
-const getAllGames = require('./getAllGames.routes.js')
-const gameSearchDB = require('./gameSearchDB.routes.js')
-const filterByGenre = require('./filterByGenre.routes.js')
-const platformFilter = require("./filterByPlatform.routes.js")
-const filterByRegion = require("./filterByRegion.routes.js")
-const createProduct = require('./products.routes.js')
-const filterAcum = require("./filtersAcum.routes.js")
-const filterByStore = require('./filterByStore.routes.js')
-const genreList = require('./getGenres.routes.js')
-const storeList = require('./getStores.routes.js')
-const platformList = require('./getPlatforms.routes.js')
+const gameSearchApi = require('./Games/gameSearchApi.routes.js');
+const getDetails = require('./Games/getDetails.routes.js')
+const getAllGames = require('./Games/getAllGames.routes.js')
+const gameSearchDB = require('./Games/gameSearchDB.routes.js')
+const filterByGenre = require('./Filters/filterByGenre.routes.js')
+const platformFilter = require("./Filters/filterByPlatform.routes.js")
+const filterByRegion = require("./Filters/filterByRegion.routes.js")
+const createProduct = require('./Products/products.routes.js')
+const filterAcum = require("./Filters/filtersAcum.routes.js")
+const filterByStore = require('./Filters/filterByStore.routes.js')
+const genreList = require('./Games/getGenres.routes.js')
+const storeList = require('./Games/getStores.routes.js')
+const platformList = require('./Games/getPlatforms.routes.js')
 const checkOut = require('./checkOut.routes.js')
-const editPost = require('./editPost.routes.js')
-const deletePost = require('./deletePost.routes.js')
-const getProductById = require('./getProductById.routes.js')
-const getProductByGame = require('./getProductByGame.routes.js')
+const editPost = require('./Products/editPost.routes.js')
+const deletePost = require('./Products/deletePost.routes.js')
+const getProductById = require('./Products/getProductById.routes.js')
+const getProductByGame = require('./Products/getProductByGame.routes.js')
 const test = require('./testmail.routes')
-const getAllProducts = require('./getProducts.route')
-const users = require ("./users.routes.js")
+const getAllProducts = require('./Products/getProducts.route')
+const users = require ("./Users/users.routes.js")
 
 
 //Import de routers:

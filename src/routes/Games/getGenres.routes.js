@@ -2,11 +2,11 @@ const express = require('express')
 const router = express.Router();
 
 const {
-    getDetails
-} = require('../controllers/getDetails.controller')
+    genreList
+} = require('../controllers/Games/getGenres.controller.js')
 
 
-router.get('/:id', getDetails)
+router.get('/', genreList)
 
 
 module.exports = router;
