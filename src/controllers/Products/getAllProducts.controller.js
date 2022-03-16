@@ -6,6 +6,7 @@ const getAllProducts = async (req, res) => {
     try {
         const getAll= await prisma.ProductsKey.findMany({
             include: {
+                key: true,
                 game: {
                     include: {
                         screenshots: true,

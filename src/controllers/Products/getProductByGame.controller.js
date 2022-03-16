@@ -8,6 +8,7 @@ const getProductByGame = async (req, res) => {
     if (game && !Array.isArray(game)) {
       const productId = await prisma.productsKey.findMany({
         include: {
+          key: true,
           game: {
             include: {
               genres: true,

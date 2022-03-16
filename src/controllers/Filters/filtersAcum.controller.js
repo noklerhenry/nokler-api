@@ -13,6 +13,7 @@ const filterAcum = async (req, res) => {
   try {
     const allDBProducts = await prisma.productsKey.findMany({
       include: {
+        key: true,
         game: {
           include: {
             genres: true,

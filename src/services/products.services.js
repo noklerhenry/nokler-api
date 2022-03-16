@@ -45,20 +45,7 @@ const createProduct = async (product) => {
         },
       });
 
-      //  await prisma.key.create({
-      //     data:{
-      //       value
-      //     }
-      //   });
-
-      // const algo = await key.forEach((k) => {
-      //   if (k) {
-      //     const newKey = prisma.key.create({
-      //       value: k,
-      //     });
-      //   }
-      //   return newKey;
-      // });
+     
 
       const algo = await prisma.key.createMany({
         data:{value: key},

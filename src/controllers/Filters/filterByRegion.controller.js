@@ -8,6 +8,7 @@ const filterByRegion = async (req, res) => {
         if(regi){
             const regionFilter = await prisma.productsKey.findMany({
               include: {
+                key: true,
                 game: {
                   include: {
                     genres: true,
