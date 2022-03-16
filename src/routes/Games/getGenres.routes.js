@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     genreList
-} = require('../controllers/Games/getGenres.controller.js')
+} = require('../../controllers/Games/getGenres.controller.js')
 
 
 router.get('/', genreList)

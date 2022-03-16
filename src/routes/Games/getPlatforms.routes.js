@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     platformList
-} = require('../controllers/Games/getPlatforms.controller.js')
+} = require('../../controllers/Games/getPlatforms.controller.js')
 
 
 router.get('/', platformList)

@@ -3,7 +3,7 @@ const {
   getUser,
   getAllUsers,
   updateUser,
-} = require("../services/users.services");
+} = require("../../services/users.services");
 
 const createUserController = async (req, res) => {
   try {

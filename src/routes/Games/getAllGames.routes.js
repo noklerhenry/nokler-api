@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const {
     getAllGames
-} = require('../controllers/Games/getAllGames.controller.js')
+} = require('../../controllers/Games/getAllGames.controller.js')
 
 router.use(cors({ origin: "http://localhost:3000" }));
 

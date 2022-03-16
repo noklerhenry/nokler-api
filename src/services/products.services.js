@@ -46,7 +46,6 @@ const createProduct = async (product) => {
       const newProduct = await prisma.productsKey.create({
         data: {
           price: Number(price),
-          key,
           available: true,
           store: {
             connect: {
@@ -69,6 +68,9 @@ const createProduct = async (product) => {
             },
           },
           region,
+          key: {
+            connect:key.value
+          },
         },
       });
       return newProduct;

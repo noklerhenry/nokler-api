@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     getDetails
-} = require('../controllers/Games/getDetails.controller')
+} = require('../../controllers/Games/getDetails.controller')
 
 
 router.get('/:id', getDetails)

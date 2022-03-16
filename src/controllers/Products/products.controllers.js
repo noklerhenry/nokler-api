@@ -1,7 +1,7 @@
 const {
   paginationService,
   createProduct,
-} = require("../services/products.services");
+} = require("../../services/products.services");
 
 const postProduct = async (req, res) => {
   try {

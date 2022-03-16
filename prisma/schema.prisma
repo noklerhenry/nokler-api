@@ -82,6 +82,7 @@ model Order {
   status    Boolean
   user      User     @relation(fields: [userId], references: [id])
   userId    Int
+  key      String
 }
 
 model Cart {

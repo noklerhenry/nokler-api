@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     filterByRegion
-} = require('../controllers/Filters/filterByRegion.controller.js')
+} = require('../../controllers/Filters/filterByRegion.controller.js')
 
 
 router.get('/', filterByRegion)

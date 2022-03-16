@@ -1,7 +1,7 @@
 const {
     getGameDetails,
     getGameScreenshots
-} = require('../services/getDetails.service')
+} = require('../../services/getDetails.service')
 
 const getDetails = async (req, res) => {
     const id = req.params.id

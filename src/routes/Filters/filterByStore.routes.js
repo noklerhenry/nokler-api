@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     filterByStore
-} = require('../controllers/Filters/filterByStore.controller.js')
+} = require('../../controllers/Filters/filterByStore.controller.js')
 
 
 router.get('/', filterByStore)

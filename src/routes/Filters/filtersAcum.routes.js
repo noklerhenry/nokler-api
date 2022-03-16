@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     filterAcum
-} = require('../controllers/Filters/filtersAcum.controller.js')
+} = require('../../controllers/Filters/filtersAcum.controller.js')
 
 
 router.get('/', filterAcum)
