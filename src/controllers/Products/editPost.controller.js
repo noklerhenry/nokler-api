@@ -17,7 +17,6 @@ const editPost = async (req, res) => {
                 where: { id: Number(id) },
                 data: {
                     price: updateValues.price === '' ?  productToEdit.price : Number(updateValues.price) ,
-                    key: updateValues.key === '' ? productToEdit.key :  updateValues.key  ,
                     region: updateValues.region === '' ?  productToEdit.region : updateValues.region ,
                     storeId: updateValues.storeId === '' ? productToEdit.storeId : Number(updateValues.storeId) ,
                     platformId: updateValues.platformId === '' ? productToEdit.platformId : Number(updateValues.platformId)
@@ -39,3 +38,13 @@ const editPost = async (req, res) => {
 module.exports = {
     editPost
 };
+
+
+// {
+//     "updateValues": {
+//         "price":"179",
+//         "region":"",
+//         "storeId":"",
+//         "platformId":""
+//     }
+// }
