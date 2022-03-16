@@ -13,13 +13,10 @@ const newKeys = async (product, key) => {
             })    
         
             const createKeys = await prisma.key.createMany({
-                data:keys,
-
-                        
+                data:keys,                        
             }) 
 
             
-
             console.log(key)
         
             return createKeys

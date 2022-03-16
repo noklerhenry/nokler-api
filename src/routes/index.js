@@ -22,6 +22,9 @@ const getProductByGame = require('./Products/getProductByGame.routes.js')
 const test = require('./testmail.routes')
 const getAllProducts = require('./Products/getProducts.route')
 const users = require ("./Users/users.routes.js")
+const editKey = require('./Products/editKey.routes.js')
+const addKey = require('./Products/addKey.routes.js')
+const deleteKey = require('./Products/deleteKey.routes.js')
 
 
 //Import de routers:
@@ -87,6 +90,14 @@ router.use('/product', createProduct)
 //getProductByGame
 router.use("/getProductByGame", getProductByGame)
 
+//editKeys
+router.use('/editKey', editKey)
+
+//addKey
+router.use('/addKey', addKey)
+
+//deleteKey
+router.use('/deleteKey', deleteKey)
 
 //DB LOAD
 
