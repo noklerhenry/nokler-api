@@ -2,6 +2,9 @@ const {
   paginationService,
   createProduct,
 } = require("../../services/products.services");
+const {
+  newKeys
+} = require('../../services/postKeys.service')
 
 const postProduct = async (req, res) => {
   try {
@@ -9,11 +12,14 @@ const postProduct = async (req, res) => {
     const newProduct = await createProduct({
       ...req.body,
     });
+    const { key } = req.body
+    const newKey = await newKeys(newProduct,key) 
     console.log("controller");
-    console.log(newProduct);
+    console.log(newProduct, newKey);
     res.status(201).json({
       message: "Product created",
       newProduct,
+      newKey
     });
   } catch (error) {
     console.log(error.message);
