@@ -3,6 +3,8 @@ const { getGameDetails, getGameScreenshots } = require("./getDetails.service");
 
 const prisma = new PrismaClient();
 
+const { newKeys} = require('../services/postKeys.service')
+
 const createProduct = async (product) => {
   try {
     const { price, key, store, game, userId, platform, region } = product;
@@ -68,18 +70,16 @@ const createProduct = async (product) => {
             },
           },
           region,
-          key: {
-            connect:key.value
-          },
         },
       });
+
+
       return newProduct;
     } else {
       console.log("game already exists");
       const newProduct = await prisma.productsKey.create({
         data: {
           price: Number(price),
-          key,
           available: true,
           store: {
             connect: {
