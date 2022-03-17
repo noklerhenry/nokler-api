@@ -88,9 +88,26 @@ const updateUser = async (userId, user) => {
   }
 };
 
+const blockUserService = async (id) => {
+  const user = await prisma.user.findUnique({
+    where: { id: Number(id) },
+  });
+
+  if (user) {
+    const userDisable = prisma.user.update({
+      where: { id: Number(id) },
+      data: {
+        enable: false,
+      },
+    });
+    return userDisable;
+  }
+};
+
 module.exports = {
   createUser,
   getUser,
   getAllUsers,
   updateUser,
+  blockUserService,
 };

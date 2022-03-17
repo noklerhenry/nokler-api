@@ -66,8 +66,8 @@ router.use("/filterByStore", filterByStore)
 router.use('/filterAcum', filterAcum)
 
 
-
 //ADMIN
+
 
 //Post product -> Creacion de productos  (se le pasa data por body)
 router.use('/product', createProduct)

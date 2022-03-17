@@ -3,6 +3,7 @@ const {
   getUser,
   getAllUsers,
   updateUser,
+  blockUserService,
 } = require("../../services/users.services");
 
 const createUserController = async (req, res) => {
@@ -69,9 +70,24 @@ const updateUserController = async (req, res) => {
   }
 };
 
+const blockUser = async (req, res) => {
+  const {id}= req.params
+  
+  try {
+    const userModified = await blockUserService(id)
+
+    res.status(200).json(userModified)
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+}
+
 module.exports = {
   createUserController,
   getUserController,
   getAllUsersController,
   updateUserController,
+  blockUser
 };
