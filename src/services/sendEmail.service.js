@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer')
 const { google, GoogleApis } = require('googleapis')
 
+
 const CLIENT_ID = process.env.CLIENT_ID
 const CLIENT_SECRET = process.env.CLIENT_SECRET
 const REDIRECT_URI = process.env.REDIRECT_URI
@@ -15,15 +16,21 @@ const oAuth2Client = new google.auth.OAuth2(
 oAuth2Client.setCredentials({refresh_token:REFRESH_TOKEN})
 
 const sendMail = async (payment) => {
+        
     const contentHtmlSucceeded = `
     <h1 style="color:green;font-size:30px;">Nokler: pago realizado.</h1>
-    <p>Se acredito correctamente el pago de ${payment.amount / 100} USD de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br/>
-    Facturacion: ${payment.charges.data[0].receipt_url}
-    </p>>
-    `
+    <p>Se acredito correctamente el pago de ${payment.amount / 100} ${payment.currency} de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br/>
+    
+    
+    </p>`
+
+       
+    
+    // Facturacion: ${payment.charges.data[0].receipt_url}
+
     const contentHtmlFailed = `
     <h1 style="color:red;font-size:30px;">Nokler: pago rechazado.</h1>
-    <p>No se pudo acreditar el pago de ${payment.amount / 100} USD de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br/>
+    <p>No se pudo acreditar el pago de ${payment.amount / 100} ${payment.currency} de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br/>
     </p>>
     `
 
@@ -44,16 +51,16 @@ const sendMail = async (payment) => {
         if(payment.status === 'succeeded') {
             const mailOptionsSucceeded = {
                 from:'Nokler Games',
-                to:payment.charges.data[0].billing_details.email,
+                to: payment.charges.data[0].billing_details.email,
                 subject: 'Payment status: aproved',
                 html: contentHtmlSucceeded
             }
             const result = await transporter.sendMail(mailOptionsSucceeded)
-            return result
+            return result            
         } else {
             const mailOptionsFailed = {
                 from:'Nokler Games',
-                to:payment.charges.data[0].billing_details.email,
+                to: payment.charges.data[0].billing_details.email,
                 subject: 'Payment status: failed',
                 html: contentHtmlFailed
             }
