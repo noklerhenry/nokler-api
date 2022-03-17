@@ -6,7 +6,7 @@ const {
     sendMail
  } = require("../services/sendEmail.service");
 
-const payment = require('../checkoutData.json')
+const payment = require('../checkoutPayment.json')
 
 module.exports = router;
 

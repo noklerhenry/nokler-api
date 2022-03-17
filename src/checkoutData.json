@@ -1,148 +1,264 @@
 {
-    "id": "pi_3KbmZlKlOgZYCvia1YlsBGoo",
-    "object": "payment_intent",
-    "amount": 46200,
-    "amount_capturable": 0,
-    "amount_received": 46200,
-    "application": null,
-    "application_fee_amount": null,
-    "automatic_payment_methods": null,
-    "canceled_at": null,
-    "cancellation_reason": null,
-    "capture_method": "automatic",
-    "charges": {
-        "object": "list",
-        "data": [
-            {
-                "id": "ch_3KbmZlKlOgZYCvia1kwphL6Z",
-                "object": "charge",
-                "amount": 46200,
-                "amount_captured": 46200,
-                "amount_refunded": 0,
-                "application": null,
-                "application_fee": null,
-                "application_fee_amount": null,
-                "balance_transaction": "txn_3KbmZlKlOgZYCvia1tt0z7uJ",
-                "billing_details": {
-                    "address": {
-                        "city": null,
-                        "country": null,
-                        "line1": null,
-                        "line2": null,
-                        "postal_code": "42424",
-                        "state": null
-                    },
-                    "email": "gonzalosoria.sg@gmail.com",
-                    "name": "qondaprro0@gmail.com",
-                    "phone": null
-                },
-                "calculated_statement_descriptor": "Stripe",
-                "captured": true,
-                "created": 1646920966,
-                "currency": "usd",
-                "customer": null,
-                "description": null,
-                "destination": null,
-                "dispute": null,
-                "disputed": false,
-                "failure_code": null,
-                "failure_message": null,
-                "fraud_details": {},
-                "invoice": null,
-                "livemode": false,
-                "metadata": {},
-                "on_behalf_of": null,
-                "order": null,
-                "outcome": {
-                    "network_status": "approved_by_network",
-                    "reason": null,
-                    "risk_level": "normal",
-                    "risk_score": 64,
-                    "seller_message": "Payment complete.",
-                    "type": "authorized"
-                },
-                "paid": true,
-                "payment_intent": "pi_3KbmZlKlOgZYCvia1YlsBGoo",
-                "payment_method": "pm_1KbmMzKlOgZYCviaGaUAqt0I",
-                "payment_method_details": {
-                    "card": {
-                        "brand": "visa",
-                        "checks": {
-                            "address_line1_check": null,
-                            "address_postal_code_check": "pass",
-                            "cvc_check": null
-                        },
-                        "country": "US",
-                        "exp_month": 4,
-                        "exp_year": 2024,
-                        "fingerprint": "l1FkA4t6UNZEdRCH",
-                        "funding": "credit",
-                        "installments": null,
-                        "last4": "4242",
-                        "network": "visa",
-                        "three_d_secure": null,
-                        "wallet": null
-                    },
-                    "type": "card"
-                },
-                "receipt_email": null,
-                "receipt_number": null,
-                "receipt_url": "https://pay.stripe.com/receipts/acct_1KbQVvKlOgZYCvia/ch_3KbmZlKlOgZYCvia1kwphL6Z/rcpt_LINKid6rV7hWklJXwUbB2vIMd5uD9oL",
-                "refunded": false,
-                "refunds": {
-                    "object": "list",
-                    "data": [],
-                    "has_more": false,
-                    "total_count": 0,
-                    "url": "/v1/charges/ch_3KbmZlKlOgZYCvia1kwphL6Z/refunds"
-                },
-                "review": null,
-                "shipping": null,
-                "source": null,
-                "source_transfer": null,
-                "statement_descriptor": null,
-                "statement_descriptor_suffix": null,
-                "status": "succeeded",
-                "transfer_data": null,
-                "transfer_group": null
-            }
-        ],
-        "has_more": false,
-        "total_count": 1,
-        "url": "/v1/charges?payment_intent=pi_3KbmZlKlOgZYCvia1YlsBGoo"
+    "id": "pm_1KeMscKlOgZYCviaEDKuyQ8m",
+    "object": "payment_method",
+    "billing_details": {
+        "address": {
+            "city": "Resistencia",
+            "country": null,
+            "line1": "Alvear 460",
+            "line2": "",
+            "postal_code": "42424",
+            "state": "Chaco"
+        },
+        "email": "qondaprro0@gmail.com",
+        "name": "qondaprro0@gmail.com",
+        "phone": null
     },
-    "client_secret": "pi_3KbmZlKlOgZYCvia1YlsBGoo_secret_KP5ljUT0sZ1NDAPnDq4QAhmMB",
-    "confirmation_method": "automatic",
-    "created": 1646920965,
-    "currency": "usd",
+    "card": {
+        "brand": "visa",
+        "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": null,
+            "cvc_check": null
+        },
+        "country": "US",
+        "exp_month": 4,
+        "exp_year": 2024,
+        "funding": "credit",
+        "generated_from": null,
+        "last4": "4242",
+        "networks": {
+            "available": [
+                "visa"
+            ],
+            "preferred": null
+        },
+        "three_d_secure_usage": {
+            "supported": true
+        },
+        "wallet": null
+    },
+    "created": 1647537174,
     "customer": null,
-    "description": null,
-    "invoice": null,
-    "last_payment_error": null,
     "livemode": false,
-    "metadata": {},
-    "next_action": null,
-    "on_behalf_of": null,
-    "payment_method": "pm_1KbmMzKlOgZYCviaGaUAqt0I",
-    "payment_method_options": {
-        "card": {
-            "installments": null,
-            "network": null,
-            "request_three_d_secure": "automatic"
+    "type": "card",
+    "amount": 28600,
+    "cart": [
+        {
+            "id": 18,
+            "price": 78,
+            "storeId": 2,
+            "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
+            "platformId": 1,
+            "cartId": null,
+            "userId": 1,
+            "region": "USA",
+            "available": true,
+            "key": [
+                "key1",
+                "key2",
+                "key3"
+            ],
+            "game": {
+                "id": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
+                "name": "The Witcher 2: Assassins of Kings",
+                "released_at": "2011-05-17T00:00:00.000Z",
+                "rating": 4.34,
+                "image": "https://media.rawg.io/media/screenshots/b22/b22469fa65b3f13df64954b5ea8d6d5c.jpg",
+                "description": "The Games on Demand version supports English.  Download the manual for this game by locating the game on http://marketplace.xbox.com and selecting “See Game Manual\".  The Witcher 2: Assassins of Kings features a thoroughly engrossing, mature storyline that defines a new standard for realistic,non-linear game narration. In addition to an epic story, the game features a complex combat system that uniquely combines deep tactical elements with dynamic action.",
+                "trailer": null,
+                "screenshots": [
+                    {
+                        "id": "5d14e665-fc27-411c-9378-7038cbeb41e2",
+                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
+                        "url": "https://media.rawg.io/media/screenshots/3f9/3f9a2ba98dd726208205b1ce243a84a1.jpg"
+                    },
+                    {
+                        "id": "76f54155-cf28-4944-a818-af92d22a836c",
+                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
+                        "url": "https://media.rawg.io/media/screenshots/95c/95c8aae66a90590714a753b2f284e659.jpg"
+                    },
+                    {
+                        "id": "d240f975-0ee4-4e74-9a76-b4e615a11651",
+                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
+                        "url": "https://media.rawg.io/media/screenshots/be4/be49e4dcb0b113cfbcbbeedca42084a5.jpg"
+                    },
+                    {
+                        "id": "ed11a1a0-f953-4993-8c38-992f603653ae",
+                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
+                        "url": "https://media.rawg.io/media/screenshots/ba7/ba76a0f31ba3fc47683a553da960a0e8.jpg"
+                    },
+                    {
+                        "id": "b57b04e1-51c5-4ba2-917a-dd6fbaea6594",
+                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
+                        "url": "https://media.rawg.io/media/screenshots/da6/da6d8d2d3624bfcaf9f02559688c1e13.jpg"
+                    },
+                    {
+                        "id": "253bfbdf-6fac-4dd3-bc35-ef23947f2664",
+                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
+                        "url": "https://media.rawg.io/media/screenshots/9b5/9b5b65a0ebda05df434d83cc7d4a1833.jpg"
+                    }
+                ],
+                "genres": [
+                    {
+                        "id": 4,
+                        "name": "RPG"
+                    }
+                ]
+            },
+            "platform": {
+                "id": 1,
+                "name": "PC"
+            },
+            "store": {
+                "id": 2,
+                "name": "PlayStation Store"
+            },
+            "quantity": 1
+        },
+        {
+            "id": 19,
+            "price": 76,
+            "storeId": 10,
+            "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
+            "platformId": 2,
+            "cartId": null,
+            "userId": 1,
+            "region": "USA",
+            "available": true,
+            "key": [
+                "a",
+                "b",
+                "c"
+            ],
+            "game": {
+                "id": "610f9957-b748-4828-bf3d-a0071a06922e",
+                "name": "Assassin’s Creed IV: Black Flag",
+                "released_at": "2013-10-29T00:00:00.000Z",
+                "rating": 4.11,
+                "image": "https://media.rawg.io/media/games/849/849414b978db37d4563ff9e4b0d3a787.jpg",
+                "description": "Assasin's Creed IV: Black Flag is a pirate game. Being the fourth “numbered” instalment in the series, the story follows a new protagonist, Edward Kenway, who tries to build his Pirate Republic. Help legendary pirates like \"Blackbeard\", Charles Vane and other well-known pirates establish their empire while fighting the mystery of the Observatory - something very valuable for the Templars. Also, you will have to continue your infiltration in Abstergo and discover some new details about itself.\n\nAlthough being in the Assasin's Creed series, the game provides you with some new mechanics. Giving the player full control of the ship, you will have to cross the open-world sea and fight for your piracy. Ships will be sinking, destroyed and massacred. If you prefer exploring, a whole new underwater world is ready for you with its beauty and danger lurking in the streams of Carribeans. Experience the pirate life at its best. (?) (needs a better ending)",
+                "trailer": null,
+                "screenshots": [
+                    {
+                        "id": "b0e43d49-fdf3-4109-87d5-9578045079fc",
+                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
+                        "url": "https://media.rawg.io/media/screenshots/46d/46de97777c05efb26597b215735dcd84.jpg"
+                    },
+                    {
+                        "id": "3c4f6753-f84d-44b1-95d8-fd601a00ae02",
+                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
+                        "url": "https://media.rawg.io/media/screenshots/162/162503bb903edd7cfddf2a49ecdf5b7d.jpg"
+                    },
+                    {
+                        "id": "ff43cc27-1aa1-446c-9413-f714d1d7ca97",
+                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
+                        "url": "https://media.rawg.io/media/screenshots/9ad/9ad8aa17d3f2be9545273f895e481280.jpg"
+                    },
+                    {
+                        "id": "f4554fc2-2d93-407c-b192-27d0a5ce9df5",
+                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
+                        "url": "https://media.rawg.io/media/screenshots/b02/b02b168d04889304aac23e47f5314721.jpg"
+                    },
+                    {
+                        "id": "2c326025-8105-47ca-8a6b-4c1f82ba3058",
+                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
+                        "url": "https://media.rawg.io/media/screenshots/ad8/ad8439bc9ed7d2f88deb836c9cff23d2.jpg"
+                    },
+                    {
+                        "id": "67ab8ab3-c3e4-40cf-9404-a7398aa04ed0",
+                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
+                        "url": "https://media.rawg.io/media/screenshots/398/398abeb965880c1c3310a6a4ad9c71b8.jpg"
+                    }
+                ],
+                "genres": [
+                    {
+                        "id": 1,
+                        "name": "Action"
+                    }
+                ]
+            },
+            "platform": {
+                "id": 2,
+                "name": "PlayStation 5"
+            },
+            "store": {
+                "id": 10,
+                "name": "Epic Games"
+            },
+            "quantity": 2
+        },
+        {
+            "id": 20,
+            "price": 56,
+            "storeId": 3,
+            "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
+            "platformId": 1,
+            "cartId": null,
+            "userId": 1,
+            "region": "USA",
+            "available": true,
+            "key": [
+                "po",
+                "asew",
+                "fasw"
+            ],
+            "game": {
+                "id": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
+                "name": "Microsoft Flight Simulator 2020",
+                "released_at": "2020-08-18T00:00:00.000Z",
+                "rating": 4.18,
+                "image": "https://media.rawg.io/media/games/89c/89ceadfd42109aa0d80e9c5dbc86f277.jpg",
+                "description": "Microsoft Flight Simulator is the next generation of one of the most beloved simulation franchises. From light planes to wide-body jets, fly highly detailed and stunning aircraft in an incredibly realistic world. Create your flight plan and fly anywhere on the planet. Enjoy flying day or night and face realistic, challenging weather conditions.",
+                "trailer": null,
+                "screenshots": [
+                    {
+                        "id": "fd6bf374-1383-4d95-ade0-18dc4e74a76d",
+                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
+                        "url": "https://media.rawg.io/media/screenshots/262/2626a342e4b2b597f870f9e3d21d7a24.jpg"
+                    },
+                    {
+                        "id": "1ae54e1a-4765-45ef-b812-f1f254d5d05c",
+                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
+                        "url": "https://media.rawg.io/media/screenshots/880/8803305c9876e794b064b0a6f061bd3a.jpg"
+                    },
+                    {
+                        "id": "184a107d-0262-4e0e-b9f5-b9d7abcbdecc",
+                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
+                        "url": "https://media.rawg.io/media/screenshots/f91/f91639a642faa7dfb9fd285fffadb151.jpg"
+                    },
+                    {
+                        "id": "f903dd6a-1f87-4903-b7ce-2574cd35a841",
+                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
+                        "url": "https://media.rawg.io/media/screenshots/d07/d073dd3bb9f6318c92f996f6786ca3e6.jpg"
+                    },
+                    {
+                        "id": "7dbf23f3-7546-4910-b850-59ace4f8d258",
+                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
+                        "url": "https://media.rawg.io/media/screenshots/56f/56f341e85649d6c20681161f31b7adaf.jpg"
+                    },
+                    {
+                        "id": "70bd60c5-1ba6-4a17-b013-42ea7feb9229",
+                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
+                        "url": "https://media.rawg.io/media/screenshots/811/81120b59ecab90bc09020cbe5c1ba04c.jpg"
+                    }
+                ],
+                "genres": [
+                    {
+                        "id": 8,
+                        "name": "Simulation"
+                    }
+                ]
+            },
+            "platform": {
+                "id": 1,
+                "name": "PC"
+            },
+            "store": {
+                "id": 3,
+                "name": "Xbox Store"
+            },
+            "quantity": 1
         }
-    },
-    "payment_method_types": [
-        "card"
-    ],
-    "processing": null,
-    "receipt_email": null,
-    "review": null,
-    "setup_future_usage": null,
-    "shipping": null,
-    "source": null,
-    "statement_descriptor": null,
-    "statement_descriptor_suffix": null,
-    "status": "succeeded",
-    "transfer_data": null,
-    "transfer_group": null
+    ]
 }
