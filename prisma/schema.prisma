@@ -56,8 +56,6 @@ model ProductsKey {
   gameId     String
   platform   Platform @relation(fields: [platformId], references: [id])
   platformId Int
-  cart       Cart?    @relation(fields: [cartId], references: [id])
-  cartId     Int?
   user       User     @relation(fields: [userId], references: [id])
   userId     Int
   region     String
@@ -76,29 +74,17 @@ model Key {
 model Order {
   id        Int      @id @default(autoincrement())
   dateOrder DateTime @default(now())
-  cart      Cart     @relation(fields: [idCart], references: [id])
-  idCart    Int
-  payment   Payment?
   status    Boolean
   user      User     @relation(fields: [userId], references: [id])
   userId    Int
-  key       String
+  key       String[]
+  game      String
+  price     Float
+  store     String
+  region    String
+  platform  String
 }
 
-model Cart {
-  id         Int           @id @default(autoincrement())
-  productKey ProductsKey[]
-  order      Order[]
-  subTotal   Float
-}
-
-model Payment {
-  id      Int    @id @default(autoincrement())
-  order   Order  @relation(fields: [orderId], references: [id])
-  orderId Int    @unique
-  amount  Float
-  status  Status @default(PENDING)
-}
 
 model User {
   id          Int           @id @default(autoincrement())
@@ -109,6 +95,8 @@ model User {
   order       Order[]
   enable      Boolean       @default(true)
 }
+
+
 
 enum Status {
   PENDING
