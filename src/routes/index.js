@@ -25,6 +25,7 @@ const users = require ("./Users/users.routes.js")
 const editKey = require('./Products/editKey.routes.js')
 const addKey = require('./Products/addKey.routes.js')
 const deleteKey = require('./Products/deleteKey.routes.js')
+const getOrders = require ("./Users/getOrders.routes.js")
 
 
 //Import de routers:
@@ -46,6 +47,7 @@ router.use('/details', getDetails)
 
 //Users
 router.use('/users', users )
+router.use("/getOrders", getOrders)
 
 
 // FILTROS
