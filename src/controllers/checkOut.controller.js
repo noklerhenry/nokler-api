@@ -20,6 +20,7 @@ const checkOut = async (req, res) => {
         quantity: games.quantity,
         userId: games.userId,
         key: games.key.slice(0,games.quantity)
+        
       }
     })
 
