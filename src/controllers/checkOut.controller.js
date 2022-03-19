@@ -4,7 +4,8 @@ const {
 
 const payment = require('../checkoutPayment.json')
 
-const {createOrder} = require('../services/createOrder.service.js')
+const {createOrder} = require('../services/createOrder.service.js');
+const { sendMail } = require('../services/sendEmail.service');
 
 
 const checkOut = async (req, res) => {
@@ -24,19 +25,14 @@ const checkOut = async (req, res) => {
       }
     })
 
-    const userId = cart[0].userId
-    
-
-    // console.log(userId)
-        
+    const userId = cart[0].userId            
     //  console.log(gamesPurchased)
     try {      
-      // const payment = await checkOutService(amount,id)
-
+      const payment = await checkOutService(amount,id)
       const order = await createOrder(gamesPurchased,payment,userId)
+      const email = await sendMail(gamesPurchased, payment)
 
-
-      res.status(200).send('payment');
+      res.status(200).send(payment);
 
     } catch (error) {
 

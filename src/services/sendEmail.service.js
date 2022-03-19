@@ -15,8 +15,9 @@ const oAuth2Client = new google.auth.OAuth2(
 
 oAuth2Client.setCredentials({refresh_token:REFRESH_TOKEN})
 
-const sendMail = async (payment) => {
-        
+const sendMail = async (gamesPurchased,payment) => {
+    
+    
     const contentHtmlSucceeded = `
     <h1 style="color:green;font-size:30px;">Nokler: pago realizado.</h1>
     <p>Se acredito correctamente el pago de ${payment.amount / 100} ${payment.currency} de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br/>
