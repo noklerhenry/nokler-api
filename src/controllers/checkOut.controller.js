@@ -12,15 +12,15 @@ const checkOut = async (req, res) => {
     console.log(req.body)
 
     let gamesPurchased = {
-        name: product.game.name,
-        gameId: product.gameId,
-        platform: product.platform.name,
-        store: product.store.name,
-        region: product.region,
-        price: product.price,
-        quantity: product.quantity,
-        userId: product.userId,
-        key: product.key.slice(0,product.quantity)
+        name: product?.game?.name,
+        gameId: product?.gameId,
+        platform: product?.platform?.name,
+        store: product?.store?.name,
+        region: product?.region,
+        price: product?.price,
+        quantity: product?.quantity,
+        userId: product?.userId,
+        key: product?.key?.slice(0,product.quantity)
         
       }
   
