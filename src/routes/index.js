@@ -47,6 +47,8 @@ router.use('/details', getDetails)
 
 //Users
 router.use('/users', users )
+
+//Orders -> trae info de todas las compras
 router.use("/getOrders", getOrders)
 
 
