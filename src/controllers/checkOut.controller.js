@@ -7,7 +7,7 @@ const { sendMail } = require('../services/sendEmail.service');
 
 // const payment = require('../checkoutData.json')
 
-const checkOut = async (req, res) => {
+const checkOut =  (req, res) => {
     const { amount, id, product } = req.body;  
     console.log(req.body)
 
@@ -27,9 +27,17 @@ const checkOut = async (req, res) => {
      console.log(gamesPurchased)
 
     try {      
-      const payment = await checkOutService(amount,id)
-      const order = await createOrder(gamesPurchased,payment)
-      const email = await sendMail(gamesPurchased, payment)
+      // const payment = await checkOutService(amount,id)
+
+      // const order = await createOrder(gamesPurchased,payment)
+
+      // const email = await sendMail(gamesPurchased, payment)
+
+      checkOutService(amount,id)
+        .then(response => {
+          createOrder(gamesPurchased,response)
+          sendMail(gamesPurchased,response)
+        } )
 
       res.status(200).send('order');
 
