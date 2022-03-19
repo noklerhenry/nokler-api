@@ -9,8 +9,9 @@ const { sendMail } = require('../services/sendEmail.service');
 
 const checkOut = async (req, res) => {
     const { amount, id, product } = req.body;  
-        
-    const gamesPurchased = {
+    console.log(req.body)
+
+    let gamesPurchased = {
         name: product.game.name,
         gameId: product.gameId,
         platform: product.platform.name,
@@ -24,12 +25,13 @@ const checkOut = async (req, res) => {
       }
   
      console.log(gamesPurchased)
+
     try {      
       const payment = await checkOutService(amount,id)
       const order = await createOrder(gamesPurchased,payment)
       const email = await sendMail(gamesPurchased, payment)
 
-      res.status(200).send(order);
+      res.status(200).send('order');
 
     } catch (error) {
 
