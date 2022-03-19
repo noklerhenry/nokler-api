@@ -24,7 +24,7 @@ const checkOut = async (req, res) => {
     //   }
     // })
 
-    const userId = cart[0].userId            
+    // const userId = cart[0].userId            
     //  console.log(gamesPurchased)
     try {      
       const payment = await checkOutService(amount,id)
