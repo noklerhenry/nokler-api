@@ -1,34 +1,29 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-const createOrder = async (data, payment, userId) => {
+const createOrder = async (data, payment) => {
   try {
     if (payment.status === "succeeded") {
-      const keys = data.map((g) => g.key);
-      const games = data.map((g) => g.name);
+      // const keys = data.map((g) => g.key);
+      // const games = data.map((g) => g.name);
+      // keys.forEach((k) => k.toString());
 
-      //   console.log(games)
-
-      keys.forEach((k) => k.toString());
-
-      // console.log(keys.toString().split(","))
-
-      for (let game of data) {
-        const order = await prisma.order.create({
-          data: {
-            status: true,
-            userId: userId,
-            key: game.key,
-            game: game.name,
-            price: game.price,
-            store: game.store,
-            region: game.region,
-            platform: game.platform,
-          },
-        });
-        console.log(order);
-      }
+      const order = await prisma.order.create({
+        data: {
+          status: true,
+          userId: data.userId,
+          key: data.key,
+          game: data.name,
+          price: data.price,
+          store: data.store,
+          region: data.region,
+          platform: data.platform,
+        },
+      });
+      console.log(order);
+      return order
     }
+
   } catch (error) {
     console.log(error);
   }

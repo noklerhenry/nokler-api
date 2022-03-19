@@ -1,5 +1,5 @@
 {
-    "id": "pm_1KeMscKlOgZYCviaEDKuyQ8m",
+    "id": "pm_1KfA4CKlOgZYCviavNEe2HHk",
     "object": "payment_method",
     "billing_details": {
         "address": {
@@ -38,227 +38,80 @@
         },
         "wallet": null
     },
-    "created": 1647537174,
+    "created": 1647726249,
     "customer": null,
     "livemode": false,
     "type": "card",
-    "amount": 28600,
-    "cart": [
-        {
-            "id": 18,
-            "price": 78,
-            "storeId": 2,
-            "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
-            "platformId": 1,
-            "cartId": null,
-            "userId": 1,
-            "region": "USA",
-            "available": true,
-            "key": [
-                "key1",
-                "key2",
-                "key3"
+    "amount": 4500,
+    "product": {
+        "id": 24,
+        "price": 45,
+        "storeId": 1,
+        "gameId": "9d610758-76b7-4688-ba60-4665e51b0e1d",
+        "platformId": 4,
+        "userId": 1,
+        "region": "Latam",
+        "available": true,
+        "key": [],
+        "game": {
+            "id": "9d610758-76b7-4688-ba60-4665e51b0e1d",
+            "name": "Elden Ring",
+            "released_at": "2022-02-25T00:00:00.000Z",
+            "rating": 4.43,
+            "image": "https://media.rawg.io/media/games/5ec/5ecac5cb026ec26a56efcc546364e348.jpg",
+            "description": "The Golden Order has been broken.\n\nRise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.\n\nIn the Lands Between ruled by Queen Marika the Eternal, the Elden Ring, the source of the Erdtree, has been shattered.\n\nMarika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad taint of their newfound strength triggered a war: The Shattering. A war that meant abandonment by the Greater Will.\n\nAnd now the guidance of grace will be brought to the Tarnished who were spurned by the grace of gold and exiled from the Lands Between. Ye dead who yet live, your grace long lost, follow the path to the Lands Between beyond the foggy sea to stand before the Elden Ring.",
+            "trailer": null,
+            "screenshots": [
+                {
+                    "id": "73209fa9-07ec-44b8-83af-69bd1ccffb84",
+                    "gameId": "9d610758-76b7-4688-ba60-4665e51b0e1d",
+                    "url": "https://media.rawg.io/media/screenshots/36f/36f941f72e2b2a41629f5fb3bd448688.jpg"
+                },
+                {
+                    "id": "f79d7d93-befd-4add-ad8c-9118fa356829",
+                    "gameId": "9d610758-76b7-4688-ba60-4665e51b0e1d",
+                    "url": "https://media.rawg.io/media/screenshots/290/29096848622521df7555850000236cb6.jpg"
+                },
+                {
+                    "id": "e609c5f5-8442-4db1-815a-d28389aecc2d",
+                    "gameId": "9d610758-76b7-4688-ba60-4665e51b0e1d",
+                    "url": "https://media.rawg.io/media/screenshots/807/807685454ea8fb87363eedd49677f49b.jpg"
+                },
+                {
+                    "id": "1393375a-9382-4c52-943d-485317b61451",
+                    "gameId": "9d610758-76b7-4688-ba60-4665e51b0e1d",
+                    "url": "https://media.rawg.io/media/screenshots/2ee/2eea4d4cce2836f689d9d39d2a4a94d5.jpg"
+                },
+                {
+                    "id": "fa2c33d2-f0df-40b2-85ed-1ded012a6487",
+                    "gameId": "9d610758-76b7-4688-ba60-4665e51b0e1d",
+                    "url": "https://media.rawg.io/media/screenshots/de9/de9b28bdd0bdb9937c7f82e55f845bb6.jpg"
+                },
+                {
+                    "id": "201fb4d1-4629-4a91-9198-d0cabe574b23",
+                    "gameId": "9d610758-76b7-4688-ba60-4665e51b0e1d",
+                    "url": "https://media.rawg.io/media/screenshots/3a2/3a2e5f31e2061bc566bcfd30fda56a17.jpg"
+                }
             ],
-            "game": {
-                "id": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
-                "name": "The Witcher 2: Assassins of Kings",
-                "released_at": "2011-05-17T00:00:00.000Z",
-                "rating": 4.34,
-                "image": "https://media.rawg.io/media/screenshots/b22/b22469fa65b3f13df64954b5ea8d6d5c.jpg",
-                "description": "The Games on Demand version supports English.  Download the manual for this game by locating the game on http://marketplace.xbox.com and selecting “See Game Manual\".  The Witcher 2: Assassins of Kings features a thoroughly engrossing, mature storyline that defines a new standard for realistic,non-linear game narration. In addition to an epic story, the game features a complex combat system that uniquely combines deep tactical elements with dynamic action.",
-                "trailer": null,
-                "screenshots": [
-                    {
-                        "id": "5d14e665-fc27-411c-9378-7038cbeb41e2",
-                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
-                        "url": "https://media.rawg.io/media/screenshots/3f9/3f9a2ba98dd726208205b1ce243a84a1.jpg"
-                    },
-                    {
-                        "id": "76f54155-cf28-4944-a818-af92d22a836c",
-                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
-                        "url": "https://media.rawg.io/media/screenshots/95c/95c8aae66a90590714a753b2f284e659.jpg"
-                    },
-                    {
-                        "id": "d240f975-0ee4-4e74-9a76-b4e615a11651",
-                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
-                        "url": "https://media.rawg.io/media/screenshots/be4/be49e4dcb0b113cfbcbbeedca42084a5.jpg"
-                    },
-                    {
-                        "id": "ed11a1a0-f953-4993-8c38-992f603653ae",
-                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
-                        "url": "https://media.rawg.io/media/screenshots/ba7/ba76a0f31ba3fc47683a553da960a0e8.jpg"
-                    },
-                    {
-                        "id": "b57b04e1-51c5-4ba2-917a-dd6fbaea6594",
-                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
-                        "url": "https://media.rawg.io/media/screenshots/da6/da6d8d2d3624bfcaf9f02559688c1e13.jpg"
-                    },
-                    {
-                        "id": "253bfbdf-6fac-4dd3-bc35-ef23947f2664",
-                        "gameId": "5795de4f-87c5-42d7-9f14-fb4c7b9da841",
-                        "url": "https://media.rawg.io/media/screenshots/9b5/9b5b65a0ebda05df434d83cc7d4a1833.jpg"
-                    }
-                ],
-                "genres": [
-                    {
-                        "id": 4,
-                        "name": "RPG"
-                    }
-                ]
-            },
-            "platform": {
-                "id": 1,
-                "name": "PC"
-            },
-            "store": {
-                "id": 2,
-                "name": "PlayStation Store"
-            },
-            "quantity": 1
+            "genres": [
+                {
+                    "id": 1,
+                    "name": "Action"
+                },
+                {
+                    "id": 4,
+                    "name": "RPG"
+                }
+            ]
         },
-        {
-            "id": 19,
-            "price": 76,
-            "storeId": 10,
-            "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
-            "platformId": 2,
-            "cartId": null,
-            "userId": 1,
-            "region": "USA",
-            "available": true,
-            "key": [
-                "a",
-                "b",
-                "c"
-            ],
-            "game": {
-                "id": "610f9957-b748-4828-bf3d-a0071a06922e",
-                "name": "Assassin’s Creed IV: Black Flag",
-                "released_at": "2013-10-29T00:00:00.000Z",
-                "rating": 4.11,
-                "image": "https://media.rawg.io/media/games/849/849414b978db37d4563ff9e4b0d3a787.jpg",
-                "description": "Assasin's Creed IV: Black Flag is a pirate game. Being the fourth “numbered” instalment in the series, the story follows a new protagonist, Edward Kenway, who tries to build his Pirate Republic. Help legendary pirates like \"Blackbeard\", Charles Vane and other well-known pirates establish their empire while fighting the mystery of the Observatory - something very valuable for the Templars. Also, you will have to continue your infiltration in Abstergo and discover some new details about itself.\n\nAlthough being in the Assasin's Creed series, the game provides you with some new mechanics. Giving the player full control of the ship, you will have to cross the open-world sea and fight for your piracy. Ships will be sinking, destroyed and massacred. If you prefer exploring, a whole new underwater world is ready for you with its beauty and danger lurking in the streams of Carribeans. Experience the pirate life at its best. (?) (needs a better ending)",
-                "trailer": null,
-                "screenshots": [
-                    {
-                        "id": "b0e43d49-fdf3-4109-87d5-9578045079fc",
-                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
-                        "url": "https://media.rawg.io/media/screenshots/46d/46de97777c05efb26597b215735dcd84.jpg"
-                    },
-                    {
-                        "id": "3c4f6753-f84d-44b1-95d8-fd601a00ae02",
-                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
-                        "url": "https://media.rawg.io/media/screenshots/162/162503bb903edd7cfddf2a49ecdf5b7d.jpg"
-                    },
-                    {
-                        "id": "ff43cc27-1aa1-446c-9413-f714d1d7ca97",
-                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
-                        "url": "https://media.rawg.io/media/screenshots/9ad/9ad8aa17d3f2be9545273f895e481280.jpg"
-                    },
-                    {
-                        "id": "f4554fc2-2d93-407c-b192-27d0a5ce9df5",
-                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
-                        "url": "https://media.rawg.io/media/screenshots/b02/b02b168d04889304aac23e47f5314721.jpg"
-                    },
-                    {
-                        "id": "2c326025-8105-47ca-8a6b-4c1f82ba3058",
-                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
-                        "url": "https://media.rawg.io/media/screenshots/ad8/ad8439bc9ed7d2f88deb836c9cff23d2.jpg"
-                    },
-                    {
-                        "id": "67ab8ab3-c3e4-40cf-9404-a7398aa04ed0",
-                        "gameId": "610f9957-b748-4828-bf3d-a0071a06922e",
-                        "url": "https://media.rawg.io/media/screenshots/398/398abeb965880c1c3310a6a4ad9c71b8.jpg"
-                    }
-                ],
-                "genres": [
-                    {
-                        "id": 1,
-                        "name": "Action"
-                    }
-                ]
-            },
-            "platform": {
-                "id": 2,
-                "name": "PlayStation 5"
-            },
-            "store": {
-                "id": 10,
-                "name": "Epic Games"
-            },
-            "quantity": 2
+        "platform": {
+            "id": 4,
+            "name": "Xbox One"
         },
-        {
-            "id": 20,
-            "price": 56,
-            "storeId": 3,
-            "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
-            "platformId": 1,
-            "cartId": null,
-            "userId": 1,
-            "region": "USA",
-            "available": true,
-            "key": [
-                "po",
-                "asew",
-                "fasw"
-            ],
-            "game": {
-                "id": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
-                "name": "Microsoft Flight Simulator 2020",
-                "released_at": "2020-08-18T00:00:00.000Z",
-                "rating": 4.18,
-                "image": "https://media.rawg.io/media/games/89c/89ceadfd42109aa0d80e9c5dbc86f277.jpg",
-                "description": "Microsoft Flight Simulator is the next generation of one of the most beloved simulation franchises. From light planes to wide-body jets, fly highly detailed and stunning aircraft in an incredibly realistic world. Create your flight plan and fly anywhere on the planet. Enjoy flying day or night and face realistic, challenging weather conditions.",
-                "trailer": null,
-                "screenshots": [
-                    {
-                        "id": "fd6bf374-1383-4d95-ade0-18dc4e74a76d",
-                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
-                        "url": "https://media.rawg.io/media/screenshots/262/2626a342e4b2b597f870f9e3d21d7a24.jpg"
-                    },
-                    {
-                        "id": "1ae54e1a-4765-45ef-b812-f1f254d5d05c",
-                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
-                        "url": "https://media.rawg.io/media/screenshots/880/8803305c9876e794b064b0a6f061bd3a.jpg"
-                    },
-                    {
-                        "id": "184a107d-0262-4e0e-b9f5-b9d7abcbdecc",
-                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
-                        "url": "https://media.rawg.io/media/screenshots/f91/f91639a642faa7dfb9fd285fffadb151.jpg"
-                    },
-                    {
-                        "id": "f903dd6a-1f87-4903-b7ce-2574cd35a841",
-                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
-                        "url": "https://media.rawg.io/media/screenshots/d07/d073dd3bb9f6318c92f996f6786ca3e6.jpg"
-                    },
-                    {
-                        "id": "7dbf23f3-7546-4910-b850-59ace4f8d258",
-                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
-                        "url": "https://media.rawg.io/media/screenshots/56f/56f341e85649d6c20681161f31b7adaf.jpg"
-                    },
-                    {
-                        "id": "70bd60c5-1ba6-4a17-b013-42ea7feb9229",
-                        "gameId": "3c0ff960-93cf-4876-b24b-4e6c9f730858",
-                        "url": "https://media.rawg.io/media/screenshots/811/81120b59ecab90bc09020cbe5c1ba04c.jpg"
-                    }
-                ],
-                "genres": [
-                    {
-                        "id": 8,
-                        "name": "Simulation"
-                    }
-                ]
-            },
-            "platform": {
-                "id": 1,
-                "name": "PC"
-            },
-            "store": {
-                "id": 3,
-                "name": "Xbox Store"
-            },
-            "quantity": 1
-        }
-    ]
+        "store": {
+            "id": 1,
+            "name": "Steam"
+        },
+        "quantity": 1
+    }
 }
