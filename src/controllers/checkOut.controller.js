@@ -2,8 +2,6 @@ const {
   checkOutService
 } = require('../services/checkOut.service')
 
-const payment = require('../checkoutPayment.json')
-
 const {createOrder} = require('../services/createOrder.service.js');
 const { sendMail } = require('../services/sendEmail.service');
 
