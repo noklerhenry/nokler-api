@@ -27,8 +27,8 @@ const checkOut = async (req, res) => {
     //  console.log(gamesPurchased)
     try {      
       const payment = await checkOutService(amount,id)
-      const order = await createOrder(gamesPurchased,payment,userId)
-      const email = await sendMail(gamesPurchased, payment)
+      // const order = await createOrder(gamesPurchased,payment,userId)
+      // const email = await sendMail(gamesPurchased, payment)
 
       res.status(200).send(payment);
 
