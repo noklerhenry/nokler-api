@@ -20,7 +20,7 @@ const checkOut =  async (req, res) => {
         price: product?.price,
         quantity: product?.quantity,
         userId: product?.userId,
-        key: product?.key?.slice(0,product.quantity)
+        key: product?.key[0]?.value
         
       }
   
