@@ -17,17 +17,25 @@ oAuth2Client.setCredentials({refresh_token:REFRESH_TOKEN})
 
 const sendMail = async (gamesPurchased,payment) => {
     
+    const {name,platform,store,region,quantity,key} = gamesPurchased
     
     const contentHtmlSucceeded = `
     <h1 style="color:green;font-size:30px;">Nokler: pago realizado.</h1>
-    <p>Se acredito correctamente el pago de ${payment.amount / 100} ${payment.currency} de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br/>
+    <p>Se acredito correctamente el pago de ${payment.amount / 100} ${payment.currency} de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br>
+    </p>
+    <h4 style="display:inline-block">Juego comprado:</h4> ${name} x ${quantity}<br>
+    <h4 style="display:inline-block">Key:</h4> ${key}<br>
+    <h4 style="display:inline-block">Store:</h4>  ${store}<br>
+    <h4 style="display:inline-block">Platform:</h4>  ${platform}<br>
+    <h4 style="display:inline-block">Region:</h4>  ${region}<br>
+    <h4 style="display:inline-block">Factura:</h4>  ${payment.charges.data[0].receipt_url}<br>
+    <h4 style="display:inline-block">Codigo de reembolso:</h4>  ${payment.charges.data[0].id}
+    `
+
     
-    
-    </p>`
 
        
     
-    // Facturacion: ${payment.charges.data[0].receipt_url}
 
     const contentHtmlFailed = `
     <h1 style="color:red;font-size:30px;">Nokler: pago rechazado.</h1>
