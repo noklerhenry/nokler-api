@@ -26,6 +26,7 @@ const editKey = require('./Products/editKey.routes.js')
 const addKey = require('./Products/addKey.routes.js')
 const deleteKey = require('./Products/deleteKey.routes.js')
 const getOrders = require ("./Users/getOrders.routes.js")
+const contactFormMail = require('./contactFormMail.routes')
 
 
 //Import de routers:
@@ -47,6 +48,9 @@ router.use('/details', getDetails)
 
 //Users
 router.use('/users', users )
+
+//Send mail ContactUs form
+router.use('/contactMail', contactFormMail)
 
 //Orders -> trae info de todas las compras
 router.use("/getOrders", getOrders)

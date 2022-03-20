@@ -32,15 +32,10 @@ const sendMail = async (gamesPurchased,payment) => {
     <h4 style="display:inline-block">Codigo de reembolso:</h4>  ${payment.charges.data[0].id}
     `
 
-    
-
-       
-    
-
     const contentHtmlFailed = `
     <h1 style="color:red;font-size:30px;">Nokler: pago rechazado.</h1>
     <p>No se pudo acreditar el pago de ${payment.amount / 100} ${payment.currency} de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br/>
-    </p>>
+    </p>
     `
 
     try {
@@ -82,6 +77,49 @@ const sendMail = async (gamesPurchased,payment) => {
 }
 
 
+const contactMail = async (data) => { 
+
+    const { name, email, message } = data
+
+    const contactHtml = `
+    <h2>Nombre de usuario: ${name}</h2>
+    <h2>Mail de usuario: ${email}</h2><br>
+    <p>
+    Mensaje:<br>
+    ${message} 
+    </p>
+    `
+
+    try {
+        const accessToken = await oAuth2Client.getAccessToken()
+        const transporter = nodemailer.createTransport({
+            service:'gmail',
+            auth:{
+                type:'OAuth2',
+                user:'noklerhenry@gmail.com',
+                clientId:CLIENT_ID,
+                clientSecret:CLIENT_SECRET,
+                refreshToken:REFRESH_TOKEN,
+                accessToken:accessToken
+            }
+        })
+
+        const contactMailContent = {
+            from:'Nokler Games',
+            to: 'noklerhenry@gmail.com',
+            subject: 'Contact us',
+            html: contactHtml
+        }
+        const result = await transporter.sendMail(contactMailContent)
+        return result
+    } catch (error) {
+        console.log(error)
+    }
+
+
+}
+
 module.exports = {
   sendMail,
+  contactMail
 };
