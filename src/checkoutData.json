@@ -52,7 +52,12 @@
         "userId": 1,
         "region": "Latam",
         "available": true,
-        "key": [],
+        "key": [
+            {
+                "value": "wwwwwwwwww",
+                "id": 43
+            }
+        ],
         "game": {
             "id": "9d610758-76b7-4688-ba60-4665e51b0e1d",
             "name": "Elden Ring",

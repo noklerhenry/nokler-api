@@ -4,12 +4,12 @@ const {
 
 const {createOrder} = require('../services/createOrder.service.js');
 const { sendMail } = require('../services/sendEmail.service');
+const { deleteKeys } = require('../services/deleteKey.service');
 
-// const payment = require('../checkoutData.json')
+const payment = require('../checkoutPayment.json');
 
 const checkOut =  async (req, res) => {
     const { amount, id, product } = req.body;  
-    console.log(req.body)
 
     let gamesPurchased = {
         name: product?.game?.name,
@@ -20,18 +20,20 @@ const checkOut =  async (req, res) => {
         price: product?.price,
         quantity: product?.quantity,
         userId: product?.userId,
-        key: product?.key[0]?.value
-        
+        key: product?.key[0]?.value,
+        keyId:[product?.key[0]?.id]        
       }
   
-     console.log(gamesPurchased)
+    //  console.log(gamesPurchased)
 
     try {      
-      const payment = await checkOutService(amount,id)
+      // const payment = await checkOutService(amount,id)
 
       const order = await createOrder(gamesPurchased,payment)
 
-      await sendMail(gamesPurchased, payment)
+      await deleteKeys (gamesPurchased.keyId)
+
+      // await sendMail(gamesPurchased, payment)
 
 
 

@@ -6,7 +6,7 @@ const newKeys = async (product, key) => {
         if(product && key) {
             const keys = key.map(k => {
                 return {
-                    value:k,
+                    value:k.key,
                     productId: Number(product.id), 
                     
                 }

@@ -3,6 +3,8 @@ const Stripe = require("stripe");
 const cors = require("cors");
 
 const { checkOut } = require("../controllers/checkOut.controller.js");
+const { checkOutRefund } = require("../controllers/checkoutRefund.controller.js");
+
 
 const router = express();
 
@@ -13,6 +15,7 @@ const stripe = new Stripe(
 router.use(cors({ origin: "http://localhost:3000" }));
 
 router.post("/", checkOut);
+router.post('/refund', checkOutRefund)
 
 
 module.exports = router;
