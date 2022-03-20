@@ -45,15 +45,6 @@ const createProduct = async (product) => {
         },
       });
 
-     
-
-      const algo = await prisma.key.createMany({
-        data:{value: key},
-        connect:{
-          productId: newProduct.id
-        }
-      });
-
       const newProduct = await prisma.productsKey.create({
         data: {
           price: Number(price),

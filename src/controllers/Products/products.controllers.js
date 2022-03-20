@@ -13,9 +13,9 @@ const postProduct = async (req, res) => {
       ...req.body,
     });
     const { key } = req.body
+    console.log(key)
     const newKey = await newKeys(newProduct,key) 
     console.log("controller");
-    console.log(newProduct, newKey);
     res.status(201).json({
       message: "Product created",
       newProduct,

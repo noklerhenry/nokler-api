@@ -7,7 +7,12 @@ const getOrdersByUser = async (req, res) => {
   try {
     const orders = await prisma.order.findMany({
 
-      where: {userId: Number(userId)}
+      where: {
+        userId: Number(userId)
+      },
+      include: {
+        user: true
+      }
     });
 
     console.log(orders)
