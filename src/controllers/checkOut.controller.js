@@ -21,7 +21,8 @@ const checkOut =  async (req, res) => {
         quantity: product?.quantity,
         userId: product?.userId,
         key: product?.key[0]?.value,
-        keyId:[product?.key[0]?.id]        
+        // keyId:[product?.key[0]?.id]        
+        keyId:product?.key?.map(k => k.id)        
       }
   
     //  console.log(gamesPurchased)
