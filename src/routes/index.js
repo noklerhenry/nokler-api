@@ -26,7 +26,8 @@ const editKey = require('./Products/editKey.routes.js')
 const addKey = require('./Products/addKey.routes.js')
 const deleteKey = require('./Products/deleteKey.routes.js')
 const getOrders = require ("./Users/getOrders.routes.js")
-const contactFormMail = require('./contactFormMail.routes')
+const contactFormMail = require('./contactFormMail.routes');
+const  currencyRate  = require("./currencyRates.routes");
 
 
 //Import de routers:
@@ -127,6 +128,8 @@ router.use("/checkOut", checkOut)
 //Nodemailer  -> testeo del servicio de email
 router.use('/test', test)
 
+//Currency rates
+router.use('/currencyRates', currencyRate)
 
 
 

@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer')
 const { google, GoogleApis } = require('googleapis')
+var fs   = require('fs');
 
 
 const CLIENT_ID = process.env.CLIENT_ID
@@ -18,25 +19,63 @@ oAuth2Client.setCredentials({refresh_token:REFRESH_TOKEN})
 const sendMail = async (gamesPurchased,payment) => {
     
     const {name,platform,store,region,quantity,key} = gamesPurchased
-    
+
     const contentHtmlSucceeded = `
-    <h1 style="color:green;font-size:30px;">Nokler: pago realizado.</h1>
-    <p>Se acredito correctamente el pago de ${payment.amount / 100} ${payment.currency} de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br>
-    </p>
-    <h4 style="display:inline-block">Juego comprado:</h4> ${name} x ${quantity}<br>
-    <h4 style="display:inline-block">Key:</h4> ${key}<br>
-    <h4 style="display:inline-block">Store:</h4>  ${store}<br>
-    <h4 style="display:inline-block">Platform:</h4>  ${platform}<br>
-    <h4 style="display:inline-block">Region:</h4>  ${region}<br>
-    <h4 style="display:inline-block">Factura:</h4>  ${payment.charges.data[0].receipt_url}<br>
-    <h4 style="display:inline-block">Codigo de reembolso:</h4>  ${payment.charges.data[0].id}
+    <div style="width: fit-content;margin: auto;padding:10px;color:#8c06f7;background:#121019;">
+        <div >
+            <h1 style="font-size:30px">NØKLER</h1>
+            <h2>Pago realizado con exito.</h2>
+        </div>
+        <div style="margin: auto">
+            <p >Se acredito correctamente el pago de ${payment.amount / 100} ${payment.currency} de la
+                tarjeta
+                ${payment.charges.data[0].payment_method_details.card.brand}
+                xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} 
+            </p>
+            <div style="padding:5px;">
+                 <h3 style="margin-bottom: 0;text-decoration: underline; " >Informacion de compra:</h3>
+                <h4 style="display: inline-block; margin:2px;">Juego:</h4>
+                <h5 style="display: inline-block; margin:2px;">${name} x ${quantity}</h5>
+                <br>
+                <h4 style="display: inline-block; margin:2px;">KEY:</h4>
+                <h5 style="display: inline-block; margin:2px;">${key}</h5>
+                <br>
+                <h4 style="display: inline-block; margin:2px;">Tienda:</h4>
+                <h5 style="display: inline-block; margin:2px;">${store}</h5>
+                <br>
+                <h4 style="display: inline-block; margin:2px;">Plataforma:</h4>
+                <h5 style="display: inline-block; margin:2px;">${platform}</h5>
+                <br>
+                <h4 style="display: inline-block; margin:2px;">Region:</h4>
+                <h5style="display: inline-block; margin:2px;">${region}</h5style=>
+                <br>
+                <h4 style="display: inline-block; margin:2px;">Factura:</h4>
+                <h5 style="display: inline-block; margin:2px;"> ${payment.charges.data[0].receipt_url}</h5>
+                <br>
+                <p>Codigo de reembolso: ${payment.charges.data[0].id}</p>
+                <br>
+                <br>
+                <p>© 2022 Nøkler. All rights reserved</p>
+            </div>
+
+        </div>
+    </div>
     `
 
+
     const contentHtmlFailed = `
-    <h1 style="color:red;font-size:30px;">Nokler: pago rechazado.</h1>
-    <p>No se pudo acreditar el pago de ${payment.amount / 100} ${payment.currency} de la tarjeta ${payment.charges.data[0].payment_method_details.card.brand} xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} <br/>
-    </p>
-    `
+    <div style="width: fit-content;margin: auto;padding:10px;color:#8c06f7;background:#121019;">
+        <div >
+            <h1 style="font-size:30px">NØKLER</h1>
+        </div>
+        <div style="margin: auto">
+            <p >No se pudo procesar el pago de ${payment.amount / 100} ${payment.currency} de la
+                tarjeta
+                ${payment.charges.data[0].payment_method_details.card.brand}
+                xxxx-xxxx-xxxx-${payment.charges.data[0].payment_method_details.card.last4} 
+            </p>
+        </div>
+    </div>    `
 
     try {
         const accessToken = await oAuth2Client.getAccessToken()
