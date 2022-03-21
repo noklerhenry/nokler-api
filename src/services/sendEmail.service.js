@@ -57,7 +57,6 @@ const sendMail = async (gamesPurchased,payment) => {
                 <br>
                 <p>© 2022 Nøkler. All rights reserved</p>
             </div>
-
         </div>
     </div>
     `
