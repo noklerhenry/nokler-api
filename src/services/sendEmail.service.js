@@ -144,8 +144,8 @@ const contactMail = async (data) => {
         })
 
         const contactMailContent = {
-            from: email,
-            to: 'noklerhenry@gmail.com',
+            from:'Nokler Games',
+            to: [email,'noklerhenry@gmail.com'],
             subject: 'Contact us',
             html: contactHtml
         }

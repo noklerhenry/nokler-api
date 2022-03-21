@@ -4,8 +4,8 @@ const contactFormMail = async (req, res) => {
 
     const { contactForm } = req.body
     try {
-        await contactMail(contactForm)
-        res.status(200).json('mail status ok.')        
+        const mailForm = await contactMail(contactForm)
+        res.status(200).json(mailForm)        
     } catch (error) {
         console.log(error);
         res.json({message: error});  
