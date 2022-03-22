@@ -9,21 +9,22 @@ const stripe = new Stripe(STRIPE_SECRET_KEY);
 // const payment = require("../checkoutPayment.json");
 
 const checkOutService = async (amount, id, data, coins) => {
-  coins = Number(coins);
-  console.log(amount);
-  const buyer = await prisma.user.findUnique({
-    where: {
-      id: Number(data.userId),
-    },
-  });
-  const deleteNoklerCoins = await prisma.user.update({
-    where: {
-      id: Number(data.userId),
-    },
-    data: {
-      noklerCoins: buyer.noklerCoins - coins,
-    },
-  });
+  if (coins) {
+    coins = Number(coins);
+    const buyer = await prisma.user.findUnique({
+      where: {
+        id: Number(data.userId),
+      },
+    });
+    const deleteNoklerCoins = await prisma.user.update({
+      where: {
+        id: Number(data.userId),
+      },
+      data: {
+        noklerCoins: buyer.noklerCoins - coins,
+      },
+    });
+  }
 
   let payment;
   switch (coins) {
