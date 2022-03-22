@@ -11,7 +11,7 @@ const router = express();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-router.use(cors({ origin: process.env.CORS_URL }));
+router.use(cors({ origin: process.env.CORS_URL.toString()  }));
 
 router.post("/", checkOut);
 router.post("/refund", checkOutRefund);

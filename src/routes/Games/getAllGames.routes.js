@@ -6,7 +6,7 @@ const {
     getAllGames
 } = require('../../controllers/Games/getAllGames.controller.js')
 
-router.use(cors({ origin: "http://localhost:3000" }));
+router.use(cors({ origin: process.env.CORS_URL.toString() }));
 
 
 router.get('/', getAllGames)
