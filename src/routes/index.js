@@ -28,6 +28,7 @@ const deleteKey = require('./Products/deleteKey.routes.js')
 const getOrders = require ("./Users/getOrders.routes.js")
 const contactFormMail = require('./contactFormMail.routes');
 const  currencyRate  = require("./currencyRates.routes");
+const getUserByEmail = require("./Users/getUserByEmail.routes")
 
 
 //Import de routers:
@@ -49,6 +50,7 @@ router.use('/details', getDetails)
 
 //Users
 router.use('/users', users )
+router.use("/getUserByEmail", getUserByEmail)
 
 //Send mail ContactUs form
 router.use('/contactMail', contactFormMail)

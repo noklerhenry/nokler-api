@@ -8,7 +8,11 @@ const getAllGames = async (req, res) => {
             include: {
                 genres: true,
                 platforms: true,
-                productKey: true,
+                productKey: {
+                    include:{
+                        key: true
+                    }
+                },
                 screenshots: true
             }
         })       
@@ -26,7 +30,7 @@ const getAllGames = async (req, res) => {
                 description: data.description,
                 genres: data.genres.map(genre => genre.name),
                 platform: data.platforms?.map(plat => plat.name),
-                productKey: data.productKey?.map(pkey => pkey.key),
+                productKey: data.productKey?.map(pkey => pkey),
                 screenshots: data.screenshots?.map(screenshot => screenshot.url)
                 }
             }                  

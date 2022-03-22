@@ -84,10 +84,12 @@ const blockUser = async (req, res) => {
 
 }
 
+
+
 module.exports = {
   createUserController,
   getUserController,
   getAllUsersController,
   updateUserController,
-  blockUser
+  blockUser,
 };

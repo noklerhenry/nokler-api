@@ -12,7 +12,9 @@ router.post("/", createUserController);
 router.get("/:id", getUserController);
 router.get("/", getAllUsersController);
 router.put("/:id", updateUserController);
-router.put("/block/:id", blockUser)
+router.put("/block/:id", blockUser);
+
+
 
 
 module.exports = router;
