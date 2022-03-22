@@ -85,7 +85,6 @@ model Order {
   platform  String
 }
 
-
 model User {
   id          Int           @id @default(autoincrement())
   email       String        @unique @db.VarChar(50)
@@ -94,9 +93,8 @@ model User {
   userProduct ProductsKey[]
   order       Order[]
   enable      Boolean       @default(true)
+  noklerCoins Float         @default(0)
 }
-
-
 
 enum Status {
   PENDING
