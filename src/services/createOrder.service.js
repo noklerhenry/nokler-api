@@ -16,7 +16,7 @@ const createOrder = async (data, payment) => {
           platform: data.platform,
         },
       });
-      console.log(order);
+      console.log("new order: ", order);
       return order;
     }
   } catch (error) {

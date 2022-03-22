@@ -13,6 +13,7 @@ const noklerCoins = async (payment, data) => {
       });
 
       if (buyer) {
+        console.log("User noklerCoins pre-order: ", buyer.noklerCoins);
         const addNoklerCoins = await prisma.user.update({
           where: {
             id: Number(data.userId),
@@ -21,7 +22,10 @@ const noklerCoins = async (payment, data) => {
             noklerCoins: buyer.noklerCoins + coins,
           },
         });
-        // console.log(addNoklerCoins)
+        console.log(
+          "User noklerCoins post-order: ",
+          addNoklerCoins.noklerCoins
+        );
       }
     }
   }

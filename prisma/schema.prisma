@@ -10,15 +10,15 @@ datasource db {
 model Game {
   id          String        @id @default(dbgenerated("gen_random_uuid()"))
   name        String        @unique @db.VarChar(100)
+  productKey  ProductsKey[]
+  platforms   Platform[]
+  genres      Genre[]
+  screenshots Screenshots[]
   released_at DateTime?
   rating      Float?
   image       String?       @db.VarChar(2048)
-  screenshots Screenshots[]
   description String?
   trailer     String?       @db.VarChar(2048)
-  genres      Genre[]
-  platforms   Platform[]
-  productKey  ProductsKey[]
 }
 
 model Screenshots {
@@ -50,17 +50,17 @@ model Store {
 model ProductsKey {
   id         Int      @id @default(autoincrement())
   price      Float
+  key        Key[]
   store      Store    @relation(fields: [storeId], references: [id])
-  storeId    Int
   game       Game     @relation(fields: [gameId], references: [id])
-  gameId     String
   platform   Platform @relation(fields: [platformId], references: [id])
-  platformId Int
+  gameId     String
   user       User     @relation(fields: [userId], references: [id])
+  platformId Int
   userId     Int
+  storeId    Int
   region     String
   available  Boolean  @default(true)
-  key        Key[]
 }
 
 model Key {

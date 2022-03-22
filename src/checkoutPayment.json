@@ -1,9 +1,9 @@
 {
     "id": "pi_3KeMkYKlOgZYCvia0UPdPN4L",
     "object": "payment_intent",
-    "amount": 28600,
+    "amount": 8900,
     "amount_capturable": 0,
-    "amount_received": 28600,
+    "amount_received": 8900,
     "application": null,
     "application_fee_amount": null,
     "automatic_payment_methods": null,
@@ -16,8 +16,8 @@
             {
                 "id": "ch_3KeMkYKlOgZYCvia0ooa5hnU",
                 "object": "charge",
-                "amount": 28600,
-                "amount_captured": 28600,
+                "amount": 8900,
+                "amount_captured": 8900,
                 "amount_refunded": 0,
                 "application": null,
                 "application_fee": null,
