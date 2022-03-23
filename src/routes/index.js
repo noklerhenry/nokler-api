@@ -29,6 +29,9 @@ const getOrders = require ("./Users/getOrders.routes.js")
 const contactFormMail = require('./contactFormMail.routes');
 const  currencyRate  = require("./currencyRates.routes");
 const getUserByEmail = require("./Users/getUserByEmail.routes")
+const refundPetition = require("./Users/refundPetition.routes.js")
+const updateStatusPetition = require("./Users/updateStatusPetition.routes.js")
+const getRefund = require("./Users/getRefund.routes")
 
 
 //Import de routers:
@@ -51,6 +54,9 @@ router.use('/details', getDetails)
 //Users
 router.use('/users', users )
 router.use("/getUserByEmail", getUserByEmail)
+router.use("/refundPetition", refundPetition)
+router.use("/updatePetition",updateStatusPetition)
+router.use("/getRofund", getRefund)
 
 //Send mail ContactUs form
 router.use('/contactMail', contactFormMail)
