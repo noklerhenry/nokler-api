@@ -4,7 +4,7 @@ const { createOrder } = require("../services/createOrder.service.js");
 const { sendMail } = require("../services/sendEmail.service");
 const { deleteKeys } = require("../services/deleteKey.service");
 
-const payment = require("../checkoutPayment.json");
+// const payment = require("../checkoutPayment.json");
 
 const checkOut = async (req, res) => {
   const { amount, id, product, billing_details } = req.body;
