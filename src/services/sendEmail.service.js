@@ -8,6 +8,7 @@ const CLIENT_SECRET = process.env.CLIENT_SECRET
 const REDIRECT_URI = process.env.REDIRECT_URI
 const REFRESH_TOKEN = process.env.REFRESH_TOKEN
 
+
 const oAuth2Client = new google.auth.OAuth2(
     CLIENT_ID,
     CLIENT_SECRET,
@@ -157,7 +158,49 @@ const contactMail = async (data) => {
 
 }
 
+const refundEmail = async (data) => { 
+
+    const { email, message } = data
+
+    const contactHtml = `
+    <h2>Mail de usuario: ${email}</h2><br>
+    <p>
+    Mensaje:<br>
+    ${message} 
+    </p>
+    `
+
+    try {
+        const accessToken = await oAuth2Client.getAccessToken()
+        const transporter = nodemailer.createTransport({
+            service:'gmail',
+            auth:{
+                type:'OAuth2',
+                user:'noklerhenry@gmail.com',
+                clientId:CLIENT_ID,
+                clientSecret:CLIENT_SECRET,
+                refreshToken:REFRESH_TOKEN,
+                accessToken:accessToken
+            }
+        })
+
+        const contactMailContent = {
+            from:'Nokler Games',
+            to: [email,'noklerhenry@gmail.com'],
+            subject: 'Contact us',
+            html: contactHtml
+        }
+        const result = await transporter.sendMail(contactMailContent)
+        return result
+    } catch (error) {
+        console.log(error)
+    }
+
+
+}
+
 module.exports = {
   sendMail,
-  contactMail
+  contactMail,
+  refundEmail
 };
