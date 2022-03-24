@@ -19,7 +19,12 @@ const updateStatusPetition = async (req, res) => {
     });
 
     if (petition.status === "FINISHED") {
+      const data = {
+        email: petition.email,
+        message: "Your petition was approved",
+      };
       checkOutRefund(petition.charge);
+      refundEmail(data);
     }
 
     else if (petition.status === "CANCEL") {

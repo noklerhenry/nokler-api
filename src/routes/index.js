@@ -56,7 +56,7 @@ router.use('/users', users )
 router.use("/getUserByEmail", getUserByEmail)
 router.use("/refundPetition", refundPetition)
 router.use("/updatePetition",updateStatusPetition)
-router.use("/getRofund", getRefund)
+router.use("/getRefund", getRefund)
 
 //Send mail ContactUs form
 router.use('/contactMail', contactFormMail)
