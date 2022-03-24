@@ -32,7 +32,7 @@ const checkOut = async (req, res) => {
 
     await deleteKeys(gamesPurchased.keyId);
 
-    await sendMail(gamesPurchased, payment);
+    await sendMail(gamesPurchased, payment, order);
 
     res.status(200).send(order);
   } catch (error) {

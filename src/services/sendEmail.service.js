@@ -15,7 +15,7 @@ const oAuth2Client = new google.auth.OAuth2(
 
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
-const sendMail = async (gamesPurchased, payment) => {
+const sendMail = async (gamesPurchased, payment, order) => {
   const { name, platform, store, region, quantity, key } = gamesPurchased;
 
   const contentHtmlSucceeded = `
@@ -488,7 +488,7 @@ const sendMail = async (gamesPurchased, payment) => {
                               <tr>
                                 <td>
 
-                                  <h3>12345678</h3></td>
+                                  <h3>Order Id: ${order.id}</h3></td>
 
                                 <td>
 
