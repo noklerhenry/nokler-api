@@ -8,6 +8,9 @@ const getPetition = async (req, res) => {
       where: {
         id: Number(idPedition),
       },
+      include: {
+        order: true,
+      },
     });
 
     res.status(200).send(petition);

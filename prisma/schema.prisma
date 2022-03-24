@@ -83,17 +83,20 @@ model Order {
   store     String
   region    String
   platform  String
+  refund    Refund?
 }
 
 model Refund {
-  id Int @id @default(autoincrement())
-  userName String
+  id        Int    @id @default(autoincrement())
+  userName  String
   userEmail String
-  charge String
-  user User @relation(fields: [userId], references: [id])
-  userId Int
-  status Status @default(PENDING)
-  about String
+  charge    String
+  user      User   @relation(fields: [userId], references: [id])
+  userId    Int
+  status    Status @default(PENDING)
+  about     String
+  order     Order  @relation(fields: [orderId], references: [id])
+  orderId   Int    @unique
 }
 
 model User {
@@ -105,7 +108,7 @@ model User {
   order       Order[]
   enable      Boolean       @default(true)
   noklerCoins Float         @default(0)
-  refund Refund[]
+  refund      Refund[]
 
 }
 
