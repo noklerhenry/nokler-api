@@ -20,7 +20,7 @@ const updateStatusPetition = async (req, res) => {
 
     if (petition.status === "FINISHED") {
       const data = {
-        email: petition.email,
+        email: petition.userEmail,
         message: "Your petition was approved",
       };
       checkOutRefund(petition.charge);
@@ -29,7 +29,7 @@ const updateStatusPetition = async (req, res) => {
 
     else if (petition.status === "CANCEL") {
       const data = {
-        email: petition.email,
+        email: petition.userEmail,
         message: "Your petition was denied",
       };
       refundEmail(data);
