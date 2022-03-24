@@ -4,13 +4,9 @@ const prisma = new PrismaClient();
 const getRefund = async (req, res) => {
   try {
     const orders = await prisma.refund.findMany({
-        include: {
-            user:{
-                include: {
-                    order: true 
-                }
-            }
-        }
+      include: {
+        user: true,
+      },
     });
 
     res.status(200).json(orders);
