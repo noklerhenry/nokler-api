@@ -105,7 +105,7 @@ model User {
   order       Order[]
   enable      Boolean       @default(true)
   noklerCoins Float         @default(0)
-  refund Refund[]
+  refund      Refund[]
 
 }
 
