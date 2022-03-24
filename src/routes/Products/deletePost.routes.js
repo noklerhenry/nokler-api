@@ -6,7 +6,7 @@ const {
 } = require('../../controllers/Products/deletePost.controller')
 
 
-router.delete('/:id', deletePost)
+router.delete('/:productId', deletePost)
 
 
 module.exports = router;
