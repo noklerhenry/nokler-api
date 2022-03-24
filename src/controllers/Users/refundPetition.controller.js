@@ -2,7 +2,7 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 const refundPetition = async (req, res) => {
-  const { email, name, lastName, charge, about, orderId } = req.body;
+  const { email, name, lastName, charge, about } = req.body;
 
   try {
     const petition = await prisma.refund.create({
@@ -11,7 +11,6 @@ const refundPetition = async (req, res) => {
         userEmail: email,
         charge,
         about,
-        order: { connect: { id: Number(orderId) } },
         user: { connect: { email } },
       },
     });

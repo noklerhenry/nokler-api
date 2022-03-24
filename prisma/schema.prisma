@@ -83,7 +83,6 @@ model Order {
   store     String
   region    String
   platform  String
-  refund    Refund?
 }
 
 model Refund {
@@ -95,8 +94,6 @@ model Refund {
   userId    Int
   status    Status @default(PENDING)
   about     String
-  order     Order  @relation(fields: [orderId], references: [id])
-  orderId   Int    @unique
 }
 
 model User {
